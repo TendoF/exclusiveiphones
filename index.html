@@ -6,411 +6,7 @@
 <title>Exclusive iPhones RSA - Affordable Apple Devices</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-html,body{margin:0;padding:0;overflow-x:hidden;box-sizing:border-box}
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --blue:#0a2a5e;--blue-dark:#061a3d;--blue-mid:#1a4a8a;
-  --accent:#00b4d8;--red:#c0392b;
-  --text:#1a1a1a;--text-light:#555;--text-muted:#888;
-  --bg:#fff;--bg-light:#f6f8fc;--bg-card:#f0f4fa;
-  --border:#e0e8f0;--radius:12px;
-}
-body{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:var(--bg)}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-button{cursor:pointer;font-family:inherit}
-
-/* TOPBAR */
-.topbar{background:#061a3d;color:#fff;font-size:11.5px;padding:7px 20px;display:flex;justify-content:space-between;align-items:center}
-.topbar-center a{color:#90e0ef;text-decoration:underline;margin-left:8px}
-
-/* HEADER */
-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 24px}
-.header-inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:20px;height:64px}
-.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.logo-icon{width:46px;height:46px;background:linear-gradient(135deg,#0a2a5e,#1a4a8a);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px;flex-shrink:0}
-.logo-text{font-size:15px;font-weight:700;color:var(--blue-dark);line-height:1.2}
-.logo-text span{display:block;font-size:10.5px;font-weight:400;color:var(--text-muted)}
-nav{display:flex;align-items:center;gap:2px;margin:0 10px;flex-shrink:0}
-.nav-link{padding:7px 12px;font-size:13px;font-weight:500;color:var(--text);border-radius:6px;transition:.2s;white-space:nowrap;display:flex;align-items:center;gap:4px}
-.nav-link:hover{background:var(--bg-light)}
-.search-bar{flex:1;position:relative;max-width:400px}
-.search-bar input{width:100%;padding:8px 38px 8px 15px;border:1.5px solid var(--border);border-radius:22px;font-size:13px;font-family:inherit;outline:none;transition:.2s}
-.search-bar input:focus{border-color:var(--blue)}
-.search-bar button{position:absolute;right:11px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-muted);font-size:14px}
-.header-actions{display:flex;align-items:center;gap:14px;margin-left:auto;flex-shrink:0}
-.header-btn{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;padding:6px 8px;border-radius:6px;transition:.2s;background:none;border:none}
-.header-btn:hover{background:var(--bg-light)}
-.cart-count{background:#00b4d8;color:#fff;border-radius:50%;width:17px;height:17px;font-size:9.5px;display:flex;align-items:center;justify-content:center;font-weight:700}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}
-
-/* MOBILE NAV */
-.mobile-nav{display:none;position:fixed;top:0;left:0;width:280px;height:100vh;background:#fff;z-index:200;padding:24px 20px;box-shadow:4px 0 20px rgba(0,0,0,.15);transform:translateX(-100%);transition:.3s;overflow-y:auto}
-.mobile-nav.open{transform:translateX(0)}
-.mobile-nav-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;cursor:pointer}
-.mobile-nav a{display:block;padding:12px 0;font-size:14.5px;font-weight:500;border-bottom:1px solid var(--border);color:var(--text)}
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:150}
-.overlay.open{display:block}
-
-/* HERO */
-.hero{position:relative;overflow:hidden;min-height:460px;display:flex;align-items:center;background:linear-gradient(140deg,#020d1f 0%,#061a3d 15%,#0a3a7a 35%,#0077b6 52%,#0a3a7a 70%,#061a3d 85%,#020d1f 100%)}
-.hero::after{content:'';position:absolute;top:-150px;right:-80px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,216,.22) 0%,transparent 68%);pointer-events:none}
-.hero-inner{max-width:1320px;margin:0 auto;padding:56px 40px;display:flex;align-items:center;width:100%;gap:40px;position:relative;z-index:2}
-.hero-text{flex:1}
-.hero-text h1{font-size:clamp(24px,4vw,58px);font-weight:800;color:#fff;line-height:1.12;margin-bottom:14px;text-shadow:0 2px 12px rgba(0,0,0,.8)}
-.hero-text .hero-subtitle{font-size:15px;color:#fff;margin-bottom:8px;font-weight:700;text-shadow:0 1px 8px rgba(0,0,0,.7)}
-.hero-text .hero-body{font-size:13.5px;color:rgba(255,255,255,.9);margin-bottom:26px;max-width:400px;line-height:1.65}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.18);color:#fff;padding:11px 28px;border-radius:4px;font-size:13.5px;font-weight:700;border:2px solid rgba(255,255,255,.85);transition:.2s;cursor:pointer;backdrop-filter:blur(4px)}
-.btn-primary:hover{background:rgba(255,255,255,.30)}
-.hero-img{flex:1;max-width:500px;display:flex;justify-content:flex-end;align-items:center}
-.hero-img img{width:100%;max-height:380px;object-fit:contain;filter:drop-shadow(0 20px 60px rgba(0,0,0,.5))}
-
-/* SECTIONS */
-.section{padding:52px 24px;width:100%;box-sizing:border-box}
-.section-inner{max-width:1320px;margin:0 auto}
-.section-title{font-size:21px;font-weight:700;margin-bottom:26px}
-.cat-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
-.cat-section-header h2{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px}
-.cat-section-header h2 i{color:var(--blue-dark);font-size:18px}
-.view-all{font-size:13px;font-weight:600;color:var(--blue-dark);border:1.5px solid var(--blue-dark);padding:6px 15px;border-radius:20px;transition:.2s;white-space:nowrap;cursor:pointer}
-.view-all:hover{background:var(--blue-dark);color:#fff}
-
-/* CATEGORY NAVIGATION */
-.cat-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:0}
-.cat-nav-btn{display:flex;align-items:center;gap:8px;padding:10px 20px;border:2px solid var(--border);border-radius:30px;font-size:13px;font-weight:600;background:#fff;color:var(--text);cursor:pointer;transition:.22s;white-space:nowrap}
-.cat-nav-btn i{font-size:13px;color:var(--blue-mid)}
-.cat-nav-btn:hover,.cat-nav-btn.active{background:var(--blue-dark);color:#fff;border-color:var(--blue-dark)}
-.cat-nav-btn:hover i,.cat-nav-btn.active i{color:#fff}
-
-/* PRODUCT CARDS */
-.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.product-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:box-shadow .2s,border-color .2s,transform .2s;position:relative}
-.product-card:hover{border-color:#bbb;box-shadow:0 6px 20px rgba(0,0,0,.10);transform:translateY(-2px)}
-.product-img{background:#f8f8f8;border-bottom:1px solid #f0f0f0;aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:12px}
-.product-img img{width:100%;height:100%;object-fit:contain}
-.wishlist-btn{position:absolute;top:9px;right:9px;width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-muted);transition:.2s;z-index:2}
-.wishlist-btn:hover,.wishlist-btn.active{color:#e74c3c;border-color:#e74c3c}
-.product-info{padding:13px}
-.product-name{font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.4}
-.product-desc{font-size:11.5px;color:var(--text-muted);margin-bottom:7px;line-height:1.5}
-.product-stars{display:flex;align-items:center;gap:4px;margin-bottom:9px}
-.stars{color:#f5a623;font-size:11.5px}
-.review-count{font-size:10.5px;color:var(--text-muted)}
-.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.product-price{font-size:14.5px;font-weight:700}
-.old-price{font-size:11.5px;color:var(--text-muted);text-decoration:line-through;font-weight:400;margin-left:4px}
-.btn-cart{border:1.5px solid var(--text);background:#fff;padding:6px 13px;border-radius:18px;font-size:12px;font-weight:600;transition:.2s;white-space:nowrap}
-.btn-cart:hover{background:var(--blue-dark);color:#fff;border-color:var(--blue-dark)}
-
-/* PAGINATION */
-.pag-wrap{position:relative}
-.pag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.pag-nav{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-top:18px}
-.pag-btn{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--border);background:#fff;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
-.pag-btn:hover:not(:disabled){border-color:var(--blue-dark);background:var(--blue-dark);color:#fff}
-.pag-btn:disabled{opacity:.3;cursor:default}
-.pag-dots{display:flex;gap:6px;align-items:center}
-.pag-dot{width:7px;height:7px;border-radius:50%;background:var(--border);border:none;padding:0;cursor:pointer;transition:.3s}
-.pag-dot.active{background:var(--blue-dark);width:20px;border-radius:4px}
-
-/* FILTER PILLS */
-.filter-pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:22px}
-.pill{padding:7px 16px;border:1.5px solid var(--border);border-radius:22px;font-size:12.5px;font-weight:500;cursor:pointer;transition:.2s;background:#fff;white-space:nowrap}
-.pill:hover{border-color:var(--text)}
-.pill.active{background:var(--blue-dark);color:#fff;border-color:var(--blue-dark)}
-
-/* BRANDS */
-.brands-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
-.brand-card{background:var(--bg-light);border:1.5px solid var(--border);border-radius:var(--radius);padding:15px 18px;display:flex;align-items:center;gap:13px;cursor:pointer;transition:.2s}
-.brand-card:hover{border-color:var(--blue);background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.06)}
-.brand-name{font-size:13.5px;font-weight:600}
-.brand-sub{font-size:11.5px;color:var(--text-muted);margin-top:2px}
-
-/* SAVINGS */
-.savings-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.savings-card{border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.2s}
-.savings-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.1)}
-.savings-top{padding:18px 18px 14px}
-.save-label{font-size:12.5px;font-weight:600;margin-bottom:5px}
-.save-amount{font-size:32px;font-weight:800;line-height:1}
-.save-amount sup{font-size:16px;vertical-align:super}
-.savings-top p{font-size:12.5px;margin-top:8px;line-height:1.5}
-.savings-img{aspect-ratio:4/3;overflow:hidden}
-.savings-img img{width:100%;height:100%;object-fit:cover}
-.savings-card:nth-child(1) .savings-top{background:#dbeafe;color:#0a2a5e}
-.savings-card:nth-child(2) .savings-top{background:#e0f2fe;color:#0077b6}
-.savings-card:nth-child(3) .savings-top{background:#f0fdf4;color:#166534}
-.savings-card:nth-child(4) .savings-top{background:#fce7f3;color:#9d174d}
-
-/* BANNERS */
-.blue-banner{background:var(--blue-dark);border-radius:var(--radius);padding:52px;display:flex;align-items:center;gap:48px;overflow:hidden;position:relative}
-.blue-banner-text h2{font-size:clamp(22px,2.8vw,40px);font-weight:800;color:#fff;margin-bottom:10px}
-.blue-banner-text p{font-size:13.5px;color:rgba(255,255,255,.75);line-height:1.7;max-width:380px}
-.btn-outline{display:inline-flex;align-items:center;gap:8px;border:2px solid #fff;color:#fff;padding:11px 26px;border-radius:38px;font-size:13.5px;font-weight:600;margin-top:22px;transition:.2s;background:none;cursor:pointer}
-.btn-outline:hover{background:#fff;color:var(--blue-dark)}
-.blue-banner-img{flex:1;max-width:480px;display:flex;align-items:center;justify-content:center}
-.blue-banner-img img{border-radius:12px;width:100%;max-height:300px;object-fit:cover}
-.cashback-banner{background:#dbeafe;border-radius:var(--radius);padding:44px 52px;display:flex;align-items:center;justify-content:space-between;gap:36px}
-.cashback-banner h2{font-size:clamp(22px,2.8vw,40px);font-weight:800}
-.cashback-banner p{font-size:13.5px;color:var(--text-light);margin-top:7px}
-.cashback-img{max-width:260px;flex-shrink:0}
-.cashback-img img{width:100%;border-radius:14px}
-
-/* TRENDING */
-.trending-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.trending-card{border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.2s;border:1.5px solid var(--border)}
-.trending-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.1)}
-.trending-card-img{height:200px;overflow:hidden}
-.trending-card-img img{width:100%;height:100%;object-fit:cover}
-.trending-info{padding:16px;background:#fff}
-.trending-info h3{font-size:16px;font-weight:700;margin-bottom:4px}
-.trending-info p{font-size:12.5px;color:var(--text-muted)}
-.btn-dark{display:inline-flex;align-items:center;gap:6px;background:var(--text);color:#fff;padding:9px 18px;border-radius:22px;font-size:12.5px;font-weight:600;margin-top:12px;border:none;cursor:pointer;transition:.2s}
-.btn-dark:hover{background:var(--blue-dark)}
-
-/* STORES */
-.stores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.store-card{border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.2s;border:1.5px solid var(--border)}
-.store-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.1)}
-.store-img{aspect-ratio:4/3;overflow:hidden}
-.store-img img{width:100%;height:100%;object-fit:cover}
-.store-info{padding:14px}
-.store-info h4{font-size:13.5px;font-weight:700}
-.store-info p{font-size:11.5px;color:var(--text-muted)}
-.store-delivery{font-size:11.5px;color:#e44;font-weight:500;margin-top:5px;display:flex;align-items:center;gap:4px}
-
-/* SERVICES */
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.service-card{border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.2s;border:1.5px solid var(--border)}
-.service-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.1)}
-.service-top{padding:22px;background:var(--bg-card)}
-.service-top h3{font-size:14.5px;font-weight:700;margin-bottom:7px}
-.service-top p{font-size:12.5px;color:var(--text-muted);line-height:1.6}
-.service-img{height:130px;overflow:hidden}
-.service-img img{width:100%;height:100%;object-fit:cover}
-
-/* PRICELIST */
-.pricelist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:22px}
-.pricelist-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:18px}
-.pricelist-card h3{font-size:14.5px;font-weight:700;color:var(--blue-dark);margin-bottom:13px;display:flex;align-items:center;gap:8px}
-.pricelist-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f0f4fa;font-size:12.5px}
-.pricelist-item:last-child{border:none}
-.pi-name{color:var(--text-light)}
-.pi-price{font-weight:700;color:var(--blue-dark)}
-
-/* ==================== ABOUT US SECTION ==================== */
-.about-section{background:var(--bg-light);padding:72px 24px}
-.about-inner{max-width:1320px;margin:0 auto}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.about-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue-mid);background:#dbeafe;padding:5px 14px;border-radius:20px;margin-bottom:18px}
-.about-heading{font-size:clamp(26px,3.2vw,42px);font-weight:800;color:var(--blue-dark);line-height:1.2;margin-bottom:18px}
-.about-heading span{color:var(--accent)}
-.about-lead{font-size:15px;color:var(--text-light);line-height:1.8;margin-bottom:28px}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
-.about-stat{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px 20px;text-align:center}
-.about-stat-num{font-size:28px;font-weight:800;color:var(--blue-dark);line-height:1}
-.about-stat-num sup{font-size:14px;vertical-align:super}
-.about-stat-label{font-size:11.5px;color:var(--text-muted);margin-top:5px;font-weight:500}
-.about-pillars{display:flex;flex-direction:column;gap:16px}
-.about-pillar{display:flex;align-items:flex-start;gap:16px;background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px 20px;transition:.2s}
-.about-pillar:hover{border-color:var(--blue-mid);box-shadow:0 4px 14px rgba(0,0,0,.07)}
-.about-pillar-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
-.about-pillar h4{font-size:14px;font-weight:700;margin-bottom:4px;color:var(--blue-dark)}
-.about-pillar p{font-size:12.5px;color:var(--text-muted);line-height:1.6}
-
-/* ==================== LOCATION SECTION ==================== */
-.location-section{background:#fff;padding:72px 24px}
-.location-inner{max-width:1320px;margin:0 auto}
-.location-header{text-align:center;margin-bottom:44px}
-.location-header h2{font-size:clamp(24px,3vw,38px);font-weight:800;color:var(--blue-dark);margin-bottom:10px}
-.location-header p{font-size:14px;color:var(--text-muted);max-width:500px;margin:0 auto}
-.location-grid{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:start}
-.location-map-wrap{border-radius:16px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.08);aspect-ratio:16/9}
-.location-map-wrap iframe{width:100%;height:100%;border:none;display:block}
-.location-details{display:flex;flex-direction:column;gap:14px}
-.location-card{background:var(--bg-light);border:1.5px solid var(--border);border-radius:12px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;transition:.2s}
-.location-card:hover{border-color:var(--blue-mid);background:#fff}
-.location-card-icon{width:40px;height:40px;border-radius:10px;background:var(--blue-dark);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex-shrink:0}
-.location-card h4{font-size:13.5px;font-weight:700;color:var(--blue-dark);margin-bottom:4px}
-.location-card p,.location-card a{font-size:12.5px;color:var(--text-muted);line-height:1.6}
-.location-card a{color:var(--blue-mid);font-weight:600}
-.location-card a:hover{text-decoration:underline}
-
-/* ==================== FAQ SECTION ==================== */
-.faq-section{background:var(--bg-light);padding:72px 24px}
-.faq-inner{max-width:860px;margin:0 auto}
-.faq-header{text-align:center;margin-bottom:44px}
-.faq-header h2{font-size:clamp(24px,3vw,38px);font-weight:800;color:var(--blue-dark);margin-bottom:10px}
-.faq-header p{font-size:14px;color:var(--text-muted)}
-.faq-list{display:flex;flex-direction:column;gap:10px;margin-bottom:36px}
-.faq-item{background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .25s,box-shadow .25s}
-.faq-item.open{border-color:var(--blue-mid);box-shadow:0 4px 18px rgba(10,42,94,.09)}
-.faq-question{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;gap:12px;user-select:none}
-.faq-question-text{font-size:14px;font-weight:600;color:var(--blue-dark);line-height:1.4}
-.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .25s;font-size:12px;color:var(--blue-mid)}
-.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue-dark);color:#fff}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1),padding .3s}
-.faq-answer-inner{padding:0 22px 18px;font-size:13.5px;color:var(--text-light);line-height:1.8}
-.faq-item.open .faq-answer{max-height:400px}
-.faq-cta{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.faq-cta-text h4{font-size:16px;font-weight:700;color:var(--blue-dark);margin-bottom:5px}
-.faq-cta-text p{font-size:13px;color:var(--text-muted)}
-.faq-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:12px 24px;border-radius:30px;font-size:13.5px;font-weight:700;border:none;cursor:pointer;white-space:nowrap;transition:.2s;flex-shrink:0}
-.faq-cta-btn:hover{background:#1db954;transform:scale(1.03)}
-
-/* FOOTER */
-footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
-.footer-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px}
-.footer-brand p{font-size:12.5px;color:var(--text-muted);line-height:1.7;max-width:260px;margin-top:11px}
-.footer-payments{margin-top:22px}
-.footer-payments h5{font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
-.payment-icons{display:flex;flex-wrap:wrap;gap:7px}
-.pay-badge{border:1.5px solid var(--border);border-radius:6px;padding:4px 9px;font-size:10.5px;font-weight:700;background:#fff}
-.footer-col h4{font-size:13.5px;font-weight:700;margin-bottom:16px}
-.footer-col ul{list-style:none}
-.footer-col li{margin-bottom:9px}
-.footer-col a{font-size:12.5px;color:var(--text-muted);transition:.2s}
-.footer-col a:hover{color:var(--blue)}
-.footer-bottom{border-top:1px solid var(--border);padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1320px;margin:0 auto}
-.footer-copy{font-size:11.5px;color:var(--text-muted)}
-
-/* CART */
-.cart-drawer{position:fixed;top:0;right:-420px;width:420px;max-width:100vw;height:100vh;background:#fff;z-index:300;box-shadow:-4px 0 30px rgba(0,0,0,.15);transition:.35s;display:flex;flex-direction:column}
-.cart-drawer.open{right:0}
-.cart-header{padding:18px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.cart-header h3{font-size:16px;font-weight:700}
-.cart-close{background:none;border:none;font-size:19px;cursor:pointer;color:var(--text-muted)}
-.cart-items{flex:1;overflow-y:auto;padding:18px 22px}
-.cart-empty{text-align:center;padding:56px 0;color:var(--text-muted)}
-.cart-empty i{font-size:44px;margin-bottom:14px;display:block}
-.cart-item{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--border)}
-.cart-item-img{width:65px;height:65px;border-radius:8px;object-fit:contain;background:#f0f4fa;border:1px solid var(--border);flex-shrink:0;padding:4px}
-.cart-item-info{flex:1;min-width:0}
-.cart-item-info h4{font-size:13px;font-weight:600;margin-bottom:4px}
-.cart-item-price{font-size:13.5px;font-weight:700;margin-top:5px}
-.cart-item-remove{background:none;border:none;color:var(--text-muted);font-size:12.5px;cursor:pointer;padding:4px;flex-shrink:0}
-.cart-item-remove:hover{color:var(--red)}
-.qty-ctrl{display:flex;align-items:center;gap:7px;margin-top:7px}
-.qty-btn{width:24px;height:24px;border:1.5px solid var(--border);border-radius:6px;background:#fff;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
-.qty-btn:hover{border-color:var(--text)}
-.qty-num{font-size:12.5px;font-weight:600;min-width:18px;text-align:center}
-.cart-footer{padding:18px 22px;border-top:1px solid var(--border)}
-.cart-total{display:flex;justify-content:space-between;font-size:15px;font-weight:700;margin-bottom:14px}
-.btn-checkout{width:100%;padding:13px;background:var(--blue-dark);color:#fff;border:none;border-radius:28px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s}
-.btn-checkout:hover{background:var(--blue-mid)}
-
-/* PDP */
-.pdp-page{position:fixed;inset:0;background:#fff;z-index:500;overflow-y:auto;transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
-.pdp-page.open{transform:translateY(0)}
-.pdp-topbar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--border);padding:0 22px;height:58px;display:flex;align-items:center;gap:14px}
-.pdp-back{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--blue-dark);background:none;border:1.5px solid var(--blue-dark);cursor:pointer;padding:7px 15px;border-radius:22px;transition:.2s}
-.pdp-back:hover{background:var(--blue-dark);color:#fff}
-.pdp-breadcrumb{font-size:12.5px;color:var(--text-muted)}
-.pdp-inner{max-width:1320px;margin:0 auto;padding:36px 22px 72px}
-.pdp-main{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-bottom:56px}
-.pdp-main-img{background:#fff;border:1.5px solid var(--border);border-radius:14px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:28px;margin-bottom:14px}
-.pdp-main-img img{width:100%;height:100%;object-fit:contain}
-.pdp-thumbs{display:flex;gap:9px;flex-wrap:wrap}
-.pdp-thumb{width:74px;height:74px;border-radius:9px;border:2px solid var(--border);background:#fff;padding:5px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.pdp-thumb.active{border-color:var(--blue-dark)}
-.pdp-thumb img{width:100%;height:100%;object-fit:contain}
-.pdp-badge{display:inline-block;background:var(--blue-dark);color:#fff;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:11px;margin-bottom:11px}
-.pdp-name{font-size:26px;font-weight:700;line-height:1.2;margin-bottom:11px}
-.pdp-stars-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:12.5px;color:var(--text-muted)}
-.pdp-price-row{display:flex;align-items:baseline;gap:11px;margin-bottom:7px;flex-wrap:wrap}
-.pdp-price{font-size:33px;font-weight:800}
-.pdp-old-price{font-size:16px;color:var(--text-muted);text-decoration:line-through;font-weight:400}
-.pdp-monthly{font-size:12.5px;color:var(--text-muted);margin-bottom:18px}
-.pdp-desc{font-size:13.5px;color:var(--text-light);line-height:1.75;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border)}
-.pdp-label{font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);margin-bottom:9px}
-.pdp-colors{display:flex;gap:9px;margin-bottom:22px;flex-wrap:wrap}
-.pdp-color-dot{width:30px;height:30px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:.2s}
-.pdp-color-dot.active{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--text)}
-.pdp-stock-note{font-size:12.5px;color:var(--red);font-weight:600;margin-bottom:18px;display:flex;align-items:center;gap:6px}
-.pdp-qty-row{display:flex;align-items:center;gap:13px;margin-bottom:26px}
-.pdp-qty-ctrl{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:10px;overflow:hidden}
-.pdp-qty-ctrl .qty-btn{width:38px;height:38px;border:none;background:#fff;font-size:17px}
-.pdp-qty-ctrl .qty-num{font-size:14.5px;font-weight:700;min-width:34px;text-align:center;border-left:1px solid var(--border);border-right:1px solid var(--border);height:38px;display:flex;align-items:center;justify-content:center}
-.pdp-btns{display:flex;gap:11px;margin-bottom:26px}
-.pdp-btn-buy{flex:1;padding:14px;background:var(--blue-dark);color:#fff;border:none;border-radius:28px;font-size:14.5px;font-weight:700;cursor:pointer;transition:.2s}
-.pdp-btn-buy:hover{background:var(--blue-mid)}
-.pdp-btn-cart{flex:1;padding:14px;background:#fff;color:var(--text);border:1.5px solid var(--border);border-radius:28px;font-size:14.5px;font-weight:700;cursor:pointer;transition:.2s}
-.pdp-btn-cart:hover{border-color:var(--text)}
-.pdp-delivery{background:var(--bg-light);border-radius:13px;padding:18px}
-.pdp-delivery-item{display:flex;align-items:flex-start;gap:13px;padding:11px 0;border-bottom:1px solid var(--border)}
-.pdp-delivery-item:last-child{border:none;padding-bottom:0}
-.pdp-delivery-item i{color:#00b4d8;margin-top:2px;font-size:15px;width:19px;flex-shrink:0}
-.pdp-delivery-item h5{font-size:13px;font-weight:700;margin-bottom:2px}
-.pdp-delivery-item p{font-size:12px;color:var(--text-muted);line-height:1.5}
-.pdp-related h3{font-size:19px;font-weight:700;margin-bottom:22px;border-top:1px solid var(--border);padding-top:44px}
-.pdp-related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-
-/* TOAST */
-.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--blue-dark);color:#fff;padding:12px 22px;border-radius:28px;font-size:13px;font-weight:600;z-index:999;transition:.35s;white-space:nowrap;box-shadow:0 6px 24px rgba(0,0,0,.2);opacity:0;max-width:90vw;text-align:center}
-.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-
-/* WA FLOAT */
-.wa-float{position:fixed;bottom:26px;right:26px;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:400;transition:.2s}
-.wa-float:hover{transform:scale(1.1)}
-
-/* RESPONSIVE */
-@media(max-width:1100px){
-  .categories-grid{grid-template-columns:repeat(3,1fr)}
-  .products-grid{grid-template-columns:repeat(3,1fr)}
-  .footer-inner{grid-template-columns:1fr 1fr 1fr}
-  .pdp-main{gap:28px}
-  .pdp-related-grid{grid-template-columns:repeat(3,1fr)}
-  .brands-grid{grid-template-columns:repeat(2,1fr)}
-  .pricelist-grid{grid-template-columns:1fr 1fr}
-  .location-grid{grid-template-columns:1fr}
-  .about-grid{gap:36px}
-}
-@media(max-width:820px){
-  nav,.search-bar{display:none}
-  .hamburger{display:flex}
-  .mobile-nav{display:block}
-  .hero-inner{flex-direction:column;padding:32px 18px 36px;gap:20px;text-align:center}
-  .hero-img{max-width:100%;justify-content:center}
-  .categories-grid{grid-template-columns:repeat(2,1fr)}
-  .products-grid{grid-template-columns:repeat(2,1fr)}
-  .brands-grid,.savings-grid{grid-template-columns:1fr 1fr}
-  .trending-grid,.services-grid,.pricelist-grid{grid-template-columns:1fr}
-  .stores-grid{grid-template-columns:1fr 1fr}
-  .pag-grid{grid-template-columns:repeat(2,1fr)}
-  .cat-section-header{flex-direction:column;align-items:flex-start;gap:9px}
-  .footer-inner{grid-template-columns:1fr 1fr}
-  .blue-banner,.cashback-banner{flex-direction:column;padding:30px 20px}
-  .blue-banner-img{display:none}
-  .topbar-left,.topbar-right{display:none}
-  .pdp-main{grid-template-columns:1fr;gap:22px}
-  .pdp-related-grid{grid-template-columns:repeat(2,1fr)}
-  .pdp-btns{flex-direction:column}
-  .about-grid{grid-template-columns:1fr}
-  .about-stats{grid-template-columns:1fr 1fr}
-  .location-grid{grid-template-columns:1fr}
-  .faq-cta{flex-direction:column;text-align:center}
-  .faq-cta-btn{width:100%;justify-content:center}
-}
-@media(max-width:520px){
-  .section{padding:26px 13px}
-  .about-section,.location-section,.faq-section{padding:44px 13px}
-  header{padding:0 13px}
-  .categories-grid{grid-template-columns:repeat(2,1fr)}
-  .products-grid{grid-template-columns:1fr 1fr}
-  .savings-grid,.brands-grid,.stores-grid{grid-template-columns:1fr}
-  .pag-grid{grid-template-columns:1fr 1fr}
-  .cart-drawer{width:100vw}
-  footer{padding:36px 13px 0}
-  .footer-inner{grid-template-columns:1fr;gap:22px}
-  .about-stats{grid-template-columns:1fr 1fr}
-  .location-map-wrap{aspect-ratio:4/3}
-  .faq-question{padding:15px 16px}
-  .faq-answer-inner{padding:0 16px 14px}
-  .faq-question-text{font-size:13px}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -498,7 +94,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
   </div>
 </section>
 
-<!-- ALL PRODUCTS (search result target) -->
+<!-- SEARCH RESULTS -->
 <section class="section" id="section-all" style="display:none;background:var(--bg-light)">
   <div class="section-inner">
     <div class="cat-section-header">
@@ -509,7 +105,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
   </div>
 </section>
 
-<!-- ==================== iPHONES ==================== -->
+<!-- iPHONES -->
 <section class="section" id="section-iphone">
   <div class="section-inner">
     <div class="cat-section-header">
@@ -520,7 +116,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
   </div>
 </section>
 
-<!-- ==================== MacBOOKS ==================== -->
+<!-- MacBOOKS -->
 <section class="section" id="section-macbooks" style="background:var(--bg-light)">
   <div class="section-inner">
     <div class="cat-section-header">
@@ -531,7 +127,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
   </div>
 </section>
 
-<!-- ==================== APPLE WATCHES ==================== -->
+<!-- APPLE WATCHES -->
 <section class="section" id="section-watches">
   <div class="section-inner">
     <div class="cat-section-header">
@@ -542,7 +138,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
   </div>
 </section>
 
-<!-- ==================== iPADS ==================== -->
+<!-- iPADS -->
 <section class="section" id="section-ipads" style="background:var(--bg-light)">
   <div class="section-inner">
     <div class="cat-section-header">
@@ -553,7 +149,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
   </div>
 </section>
 
-<!-- ==================== AIRPODS ==================== -->
+<!-- AIRPODS -->
 <section class="section" id="section-airpods">
   <div class="section-inner">
     <div class="cat-section-header">
@@ -564,7 +160,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
   </div>
 </section>
 
-<!-- BLUE GUARANTEE BANNER -->
+<!-- GUARANTEE BANNER -->
 <div style="padding:0 24px;max-width:1320px;margin:0 auto">
   <div class="blue-banner">
     <div class="blue-banner-text">
@@ -667,19 +263,11 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
     <div class="trending-grid">
       <div class="trending-card" onclick="scrollToSection('section-iphone')">
         <div class="trending-card-img"><img src="Apple iPhone 14, 128GB, Purple.jpg" alt="iPhones"></div>
-        <div class="trending-info">
-          <h3>iPhone World</h3>
-          <p>iPhone 11 to iPhone 17 Pro Max — All Colours Available</p>
-          <button class="btn-dark">Shop Now</button>
-        </div>
+        <div class="trending-info"><h3>iPhone World</h3><p>iPhone 11 to iPhone 17 Pro Max — All Colours Available</p><button class="btn-dark">Shop Now</button></div>
       </div>
       <div class="trending-card" onclick="scrollToSection('section-macbooks')">
         <div class="trending-card-img"><img src="Apple MacBook Pro 2024.jpg" alt="MacBooks"></div>
-        <div class="trending-info">
-          <h3>MacBook World</h3>
-          <p>MacBook Air & Pro — M1, M2, M3 & M4 Chips</p>
-          <button class="btn-dark">Shop Now</button>
-        </div>
+        <div class="trending-info"><h3>MacBook World</h3><p>MacBook Air & Pro — M1, M2, M3 & M4 Chips</p><button class="btn-dark">Shop Now</button></div>
       </div>
     </div>
   </div>
@@ -812,7 +400,7 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
   </div>
 </section>
 
-<!-- ==================== ABOUT US ==================== -->
+<!-- ABOUT US -->
 <section class="about-section" id="section-about">
   <div class="about-inner">
     <div class="about-grid">
@@ -820,224 +408,64 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
         <div class="about-label"><i class="fa fa-info-circle"></i> About Us</div>
         <h2 class="about-heading">South Africa's Most Trusted <span>Apple Reseller</span></h2>
         <p class="about-lead">Exclusive iPhones RSA was built on one simple promise — make premium Apple products accessible to every South African. Based in Sandton, Johannesburg, we've been delivering brand new, sealed Apple devices to customers across the country since day one.</p>
-        <p style="font-size:13.5px;color:var(--text-light);line-height:1.8;margin-bottom:28px">We are not a grey-market dealer. Every single device we sell is <strong>100% brand new, sealed in original packaging</strong> with manufacturer warranty. No refurbished, no second-hand, no tricks. What you order is exactly what you receive — at a price that makes sense.</p>
+        <p style="font-size:13.5px;color:var(--text-light);line-height:1.8;margin-bottom:28px">We are not a grey-market dealer. Every single device we sell is <strong>100% brand new, sealed in original packaging</strong> with manufacturer warranty. No refurbished, no second-hand, no tricks.</p>
         <div class="about-stats">
-          <div class="about-stat">
-            <div class="about-stat-num">15<sup>K+</sup></div>
-            <div class="about-stat-label">Happy Customers Nationwide</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-num">5<sup>★</sup></div>
-            <div class="about-stat-label">Average Customer Rating</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-num">24<sup>/7</sup></div>
-            <div class="about-stat-label">WhatsApp Support Available</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-num">1<sup>–2</sup></div>
-            <div class="about-stat-label">Day Nationwide Delivery</div>
-          </div>
+          <div class="about-stat"><div class="about-stat-num">15<sup>K+</sup></div><div class="about-stat-label">Happy Customers Nationwide</div></div>
+          <div class="about-stat"><div class="about-stat-num">5<sup>★</sup></div><div class="about-stat-label">Average Customer Rating</div></div>
+          <div class="about-stat"><div class="about-stat-num">24<sup>/7</sup></div><div class="about-stat-label">WhatsApp Support Available</div></div>
+          <div class="about-stat"><div class="about-stat-num">1<sup>–2</sup></div><div class="about-stat-label">Day Nationwide Delivery</div></div>
         </div>
         <button class="btn-primary" style="background:var(--blue-dark);border-color:var(--blue-dark);border-radius:30px;margin-top:4px" onclick="window.open('https://wa.me/27838687662','_blank')"><i class="fab fa-whatsapp"></i> &nbsp;Chat With Us</button>
       </div>
       <div class="about-pillars">
-        <div class="about-pillar">
-          <div class="about-pillar-icon" style="background:#dbeafe"><i class="fa fa-box-open" style="color:#0a2a5e"></i></div>
-          <div>
-            <h4>100% Brand New & Sealed</h4>
-            <p>Every product ships in its original, factory-sealed box — never opened, never refurbished. Full manufacturer warranty included on all devices.</p>
-          </div>
-        </div>
-        <div class="about-pillar">
-          <div class="about-pillar-icon" style="background:#dcfce7"><i class="fa fa-shield-alt" style="color:#166534"></i></div>
-          <div>
-            <h4>Verified & Trusted Since Day One</h4>
-            <p>Over 15,000 satisfied customers have trusted us. See hundreds of verified delivery photos and reviews on our Instagram @exclusiveiphonesrsa.</p>
-          </div>
-        </div>
-        <div class="about-pillar">
-          <div class="about-pillar-icon" style="background:#fef9c3"><i class="fa fa-truck" style="color:#854d0e"></i></div>
-          <div>
-            <h4>Nationwide Delivery in 1–2 Days</h4>
-            <p>We ship through Postnet, PEP & The Courier Guy — fast, reliable and trackable. From Johannesburg to Cape Town, Durban to Polokwane.</p>
-          </div>
-        </div>
-        <div class="about-pillar">
-          <div class="about-pillar-icon" style="background:#ffe4e6"><i class="fab fa-whatsapp" style="color:#c0392b"></i></div>
-          <div>
-            <h4>Real People, Real Support</h4>
-            <p>We're available on WhatsApp 24/7. No bots, no scripted replies — just real, fast help from our team whenever you need it.</p>
-          </div>
-        </div>
-        <div class="about-pillar">
-          <div class="about-pillar-icon" style="background:#f3e8ff"><i class="fa fa-tag" style="color:#7c3aed"></i></div>
-          <div>
-            <h4>Unbeatable Prices in South Africa</h4>
-            <p>We cut out unnecessary middlemen to bring you the lowest prices on Apple devices in South Africa — without compromising on quality.</p>
-          </div>
-        </div>
+        <div class="about-pillar"><div class="about-pillar-icon" style="background:#dbeafe"><i class="fa fa-box-open" style="color:#0a2a5e"></i></div><div><h4>100% Brand New & Sealed</h4><p>Every product ships in its original, factory-sealed box with full manufacturer warranty.</p></div></div>
+        <div class="about-pillar"><div class="about-pillar-icon" style="background:#dcfce7"><i class="fa fa-shield-alt" style="color:#166534"></i></div><div><h4>Verified & Trusted Since Day One</h4><p>Over 15,000 satisfied customers. See delivery photos on Instagram @exclusiveiphonesrsa.</p></div></div>
+        <div class="about-pillar"><div class="about-pillar-icon" style="background:#fef9c3"><i class="fa fa-truck" style="color:#854d0e"></i></div><div><h4>Nationwide Delivery in 1–2 Days</h4><p>Via Postnet, PEP & The Courier Guy — fast, reliable and trackable across South Africa.</p></div></div>
+        <div class="about-pillar"><div class="about-pillar-icon" style="background:#ffe4e6"><i class="fab fa-whatsapp" style="color:#c0392b"></i></div><div><h4>Real People, Real Support</h4><p>Available on WhatsApp 24/7. No bots — just real, fast help from our team.</p></div></div>
+        <div class="about-pillar"><div class="about-pillar-icon" style="background:#f3e8ff"><i class="fa fa-tag" style="color:#7c3aed"></i></div><div><h4>Unbeatable Prices in South Africa</h4><p>We cut out middlemen to bring you the lowest Apple prices in SA without compromising quality.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== LOCATION ==================== -->
+<!-- LOCATION -->
 <section class="location-section" id="section-location">
   <div class="location-inner">
     <div class="location-header">
       <h2>Find Us in Johannesburg</h2>
-      <p>Based in Sandton, Gauteng — the heart of South Africa's business hub. We serve customers nationwide through our courier partners.</p>
+      <p>Based in Sandton, Gauteng. We serve customers nationwide through our courier partners.</p>
     </div>
     <div class="location-grid">
       <div class="location-map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57367.56816906566!2d28.024695!3d-26.107567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9573e1e7a01f39%3A0x4a01e27afe27aa0a!2sSandton%2C%20Johannesburg!5e0!3m2!1sen!2sza!4v1718000000000!5m2!1sen!2sza"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57367.56816906566!2d28.024695!3d-26.107567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9573e1e7a01f39%3A0x4a01e27afe27aa0a!2sSandton%2C%20Johannesburg!5e0!3m2!1sen!2sza!4v1718000000000!5m2!1sen!2sza" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="location-details">
-        <div class="location-card">
-          <div class="location-card-icon"><i class="fa fa-map-marker-alt"></i></div>
-          <div>
-            <h4>Our Location</h4>
-            <p>Sandton, Johannesburg<br>Gauteng, South Africa</p>
-          </div>
-        </div>
-        <div class="location-card">
-          <div class="location-card-icon"><i class="fa fa-clock"></i></div>
-          <div>
-            <h4>Business Hours</h4>
-            <p>Open 24 Hours, 7 Days a Week<br>WhatsApp Support Available Always</p>
-          </div>
-        </div>
-        <div class="location-card">
-          <div class="location-card-icon"><i class="fab fa-whatsapp"></i></div>
-          <div>
-            <h4>WhatsApp</h4>
-            <a href="https://wa.me/27838687662" target="_blank">+27 83 868 7662</a>
-            <p style="margin-top:2px">Fastest way to order or ask questions</p>
-          </div>
-        </div>
-        <div class="location-card">
-          <div class="location-card-icon"><i class="fab fa-instagram"></i></div>
-          <div>
-            <h4>Instagram</h4>
-            <a href="https://instagram.com/exclusiveiphonesrsa" target="_blank">@exclusiveiphonesrsa</a>
-            <p style="margin-top:2px">Proof of deliveries & reviews</p>
-          </div>
-        </div>
-        <div class="location-card">
-          <div class="location-card-icon"><i class="fa fa-truck"></i></div>
-          <div>
-            <h4>We Deliver Nationwide</h4>
-            <p>Via Postnet, PEP & The Courier Guy<br>1–2 Business Days across all provinces</p>
-          </div>
-        </div>
+        <div class="location-card"><div class="location-card-icon"><i class="fa fa-map-marker-alt"></i></div><div><h4>Our Location</h4><p>Sandton, Johannesburg<br>Gauteng, South Africa</p></div></div>
+        <div class="location-card"><div class="location-card-icon"><i class="fa fa-clock"></i></div><div><h4>Business Hours</h4><p>Open 24 Hours, 7 Days a Week<br>WhatsApp Support Available Always</p></div></div>
+        <div class="location-card"><div class="location-card-icon"><i class="fab fa-whatsapp"></i></div><div><h4>WhatsApp</h4><a href="https://wa.me/27838687662" target="_blank">+27 83 868 7662</a><p style="margin-top:2px">Fastest way to order or ask questions</p></div></div>
+        <div class="location-card"><div class="location-card-icon"><i class="fab fa-instagram"></i></div><div><h4>Instagram</h4><a href="https://instagram.com/exclusiveiphonesrsa" target="_blank">@exclusiveiphonesrsa</a><p style="margin-top:2px">Proof of deliveries & reviews</p></div></div>
+        <div class="location-card"><div class="location-card-icon"><i class="fa fa-truck"></i></div><div><h4>We Deliver Nationwide</h4><p>Via Postnet, PEP & The Courier Guy<br>1–2 Business Days across all provinces</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== FAQ ==================== -->
+<!-- FAQ -->
 <section class="faq-section" id="section-faq">
   <div class="faq-inner">
-    <div class="faq-header">
-      <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know before placing your order.</p>
-    </div>
+    <div class="faq-header"><h2>Frequently Asked Questions</h2><p>Everything you need to know before placing your order.</p></div>
     <div class="faq-list">
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-question-text">Are the products genuinely brand new and not refurbished?</div>
-          <div class="faq-icon"><i class="fa fa-plus"></i></div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Absolutely. Every single device we sell is 100% brand new and factory sealed in its original box — straight from the supplier to you. We do not sell refurbished, repaired, or second-hand devices under any circumstances. You will receive your product in the exact same condition it left the factory, complete with all original accessories and manufacturer warranty.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-question-text">How do I place an order?</div>
-          <div class="faq-icon"><i class="fa fa-plus"></i></div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Ordering is simple. You can either add a product to your cart on this website and checkout via WhatsApp, or contact us directly on WhatsApp at +27 83 868 7662. Tell us which device you want, confirm your delivery address, and make payment via EFT, bank transfer, or Cash on Delivery (where available). Once payment is confirmed, we dispatch your order within 24 hours.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-question-text">How long does delivery take and how much does it cost?</div>
-          <div class="faq-icon"><i class="fa fa-plus"></i></div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">We offer nationwide delivery across South Africa via Postnet, PEP, and The Courier Guy. Standard delivery takes 1–2 business days to most areas. Delivery fees are calculated based on your location and will be confirmed when you place your order via WhatsApp. For orders in certain high-demand areas, we may also offer same-day collection options — ask us when you order.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-question-text">What payment methods do you accept?</div>
-          <div class="faq-icon"><i class="fa fa-plus"></i></div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">We accept EFT (Electronic Funds Transfer), direct bank deposits, Visa and Mastercard payments, and Cash on Delivery in select areas. Cash on Delivery availability depends on your location — please WhatsApp us before ordering to confirm. We do not accept partial payments or deposits for COD orders.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-question-text">Is Cash on Delivery available in my area?</div>
-          <div class="faq-icon"><i class="fa fa-plus"></i></div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Cash on Delivery is available in select areas, primarily across Gauteng and parts of other major provinces. To confirm whether COD is available for your area, please send us a WhatsApp message with your location before placing your order. We'll confirm immediately. Please note that for COD orders, a small commitment deposit may be required before dispatch.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-question-text">Can I return or exchange a product if I'm not happy?</div>
-          <div class="faq-icon"><i class="fa fa-plus"></i></div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">We stand behind every product we sell. If your device arrives damaged, defective, or is not the product you ordered, we will arrange a replacement or full refund. Returns must be reported within 48 hours of delivery via WhatsApp, with photos or a video of the issue. Please note that returns for buyer's remorse (changing your mind about a model) are not accepted, so please confirm your choice carefully before ordering.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-question-text">How do I know this business is legitimate and trustworthy?</div>
-          <div class="faq-icon"><i class="fa fa-plus"></i></div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">We have served over 15,000 customers across South Africa and built our reputation entirely on trust and transparency. Visit our Instagram page @exclusiveiphonesrsa to see hundreds of real delivery photos, unboxing videos, and reviews from verified customers. We encourage you to do your research before ordering — our track record speaks for itself. You can also WhatsApp us at any time and we'll answer all your questions honestly.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-question-text">Do you offer warranty on devices? What happens if my device has a fault?</div>
-          <div class="faq-icon"><i class="fa fa-plus"></i></div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">All brand new devices come with manufacturer warranty as included in the original box. If you experience a manufacturing defect after delivery, you can take the device to any authorised Apple service centre in South Africa for warranty claims. For any delivery or packaging-related issues, contact us directly on WhatsApp within 48 hours and we will resolve it personally and promptly.</div>
-        </div>
-      </div>
-
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><div class="faq-question-text">Are the products genuinely brand new and not refurbished?</div><div class="faq-icon"><i class="fa fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">Absolutely. Every single device we sell is 100% brand new and factory sealed in its original box — straight from the supplier to you. We do not sell refurbished, repaired, or second-hand devices under any circumstances.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><div class="faq-question-text">How do I place an order?</div><div class="faq-icon"><i class="fa fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">Add a product to your cart and checkout via WhatsApp, or contact us directly on +27 83 868 7662. Tell us which device you want, confirm your delivery address, and make payment via EFT or Cash on Delivery where available.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><div class="faq-question-text">How long does delivery take?</div><div class="faq-icon"><i class="fa fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">We offer nationwide delivery via Postnet, PEP, and The Courier Guy. Standard delivery takes 1–2 business days to most areas in South Africa.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><div class="faq-question-text">What payment methods do you accept?</div><div class="faq-icon"><i class="fa fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">We accept EFT, direct bank deposits, Visa and Mastercard, and Cash on Delivery in select areas.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><div class="faq-question-text">Is Cash on Delivery available in my area?</div><div class="faq-icon"><i class="fa fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">Cash on Delivery is available in select areas primarily across Gauteng. WhatsApp us with your location to confirm before placing your order.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><div class="faq-question-text">Can I return or exchange a product?</div><div class="faq-icon"><i class="fa fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">If your device arrives damaged or defective, we will arrange a replacement or full refund. Report within 48 hours of delivery via WhatsApp with photos or a video of the issue.</div></div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><div class="faq-question-text">How do I know this business is legitimate?</div><div class="faq-icon"><i class="fa fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">We've served over 15,000 customers across South Africa. Visit @exclusiveiphonesrsa on Instagram to see hundreds of real delivery photos and verified customer reviews.</div></div></div>
     </div>
-
     <div class="faq-cta">
-      <div class="faq-cta-text">
-        <h4>Still have a question?</h4>
-        <p>Our team is available 24/7 on WhatsApp. We respond fast — usually within minutes.</p>
-      </div>
-      <button class="faq-cta-btn" onclick="window.open('https://wa.me/27838687662?text=Hi! I have a question about ordering.','_blank')">
-        <i class="fab fa-whatsapp"></i> Chat With Us
-      </button>
+      <div class="faq-cta-text"><h4>Still have a question?</h4><p>Our team is available 24/7 on WhatsApp. We respond fast — usually within minutes.</p></div>
+      <button class="faq-cta-btn" onclick="window.open('https://wa.me/27838687662?text=Hi! I have a question about ordering.','_blank')"><i class="fab fa-whatsapp"></i> Chat With Us</button>
     </div>
   </div>
 </section>
@@ -1046,105 +474,34 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
 <footer id="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="logo">
-        <div class="logo-icon"><i class="fa fa-apple"></i></div>
-        <div class="logo-text">Exclusive iPhones RSA<span>Affordable Devices</span></div>
-      </div>
+      <div class="logo"><div class="logo-icon"><i class="fa fa-apple"></i></div><div class="logo-text">Exclusive iPhones RSA<span>Affordable Devices</span></div></div>
       <p>Your trusted Apple device reseller in South Africa. All Brand New. Sandton, Johannesburg. Open 24 hours.</p>
-      <div class="footer-payments">
-        <h5>Accepted Payments</h5>
-        <div class="payment-icons">
-          <span class="pay-badge">EFT</span>
-          <span class="pay-badge">Visa</span>
-          <span class="pay-badge">MC</span>
-          <span class="pay-badge">Cash</span>
-          <span class="pay-badge">COD</span>
-        </div>
-      </div>
+      <div class="footer-payments"><h5>Accepted Payments</h5><div class="payment-icons"><span class="pay-badge">EFT</span><span class="pay-badge">Visa</span><span class="pay-badge">MC</span><span class="pay-badge">Cash</span><span class="pay-badge">COD</span></div></div>
     </div>
-    <div class="footer-col">
-      <h4>Products</h4>
-      <ul>
-        <li><a href="#section-iphone">iPhones</a></li>
-        <li><a href="#section-macbooks">MacBooks</a></li>
-        <li><a href="#section-watches">Apple Watches</a></li>
-        <li><a href="#section-ipads">iPads</a></li>
-        <li><a href="#section-airpods">AirPods</a></li>
-        <li><a href="#pricelist">Full Pricelist</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#section-about">About Us</a></li>
-        <li><a href="https://instagram.com/exclusiveiphonesrsa" target="_blank">Instagram</a></li>
-        <li><a href="#section-location">Find Us</a></li>
-        <li><a href="#section-faq">FAQ</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#section-faq">Shipping & Delivery</a></li>
-        <li><a href="#section-faq">Returns Policy</a></li>
-        <li><a href="#section-faq">Warranty Info</a></li>
-        <li><a href="#deals">Today's Deals</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="https://wa.me/27838687662" target="_blank">+27 83 868 7662</a></li>
-        <li><a href="https://instagram.com/exclusiveiphonesrsa" target="_blank">@exclusiveiphonesrsa</a></li>
-        <li><a href="#section-location">Sandton, Johannesburg</a></li>
-        <li><a href="https://wa.me/27838687662" target="_blank">Open 24 Hours</a></li>
-      </ul>
-    </div>
+    <div class="footer-col"><h4>Products</h4><ul><li><a href="#section-iphone">iPhones</a></li><li><a href="#section-macbooks">MacBooks</a></li><li><a href="#section-watches">Apple Watches</a></li><li><a href="#section-ipads">iPads</a></li><li><a href="#section-airpods">AirPods</a></li><li><a href="#pricelist">Full Pricelist</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="#section-about">About Us</a></li><li><a href="https://instagram.com/exclusiveiphonesrsa" target="_blank">Instagram</a></li><li><a href="#section-location">Find Us</a></li><li><a href="#section-faq">FAQ</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="#section-faq">Shipping & Delivery</a></li><li><a href="#section-faq">Returns Policy</a></li><li><a href="#section-faq">Warranty Info</a></li><li><a href="#deals">Today's Deals</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="https://wa.me/27838687662" target="_blank">+27 83 868 7662</a></li><li><a href="https://instagram.com/exclusiveiphonesrsa" target="_blank">@exclusiveiphonesrsa</a></li><li><a href="#section-location">Sandton, Johannesburg</a></li><li><a href="https://wa.me/27838687662" target="_blank">Open 24 Hours</a></li></ul></div>
   </div>
   <div class="footer-bottom">
-    <div style="display:flex;gap:18px;flex-wrap:wrap">
-      <a href="#" style="font-size:11.5px;color:var(--text-muted)">Terms of Service</a>
-      <a href="#" style="font-size:11.5px;color:var(--text-muted)">Privacy Policy</a>
-      <a href="https://instagram.com/exclusiveiphonesrsa" target="_blank" style="font-size:11.5px;color:var(--text-muted)">Instagram</a>
-    </div>
+    <div style="display:flex;gap:18px;flex-wrap:wrap"><a href="#" style="font-size:11.5px;color:var(--text-muted)">Terms of Service</a><a href="#" style="font-size:11.5px;color:var(--text-muted)">Privacy Policy</a><a href="https://instagram.com/exclusiveiphonesrsa" target="_blank" style="font-size:11.5px;color:var(--text-muted)">Instagram</a></div>
     <div class="footer-copy">© 2025 Exclusive iPhones RSA. All Rights Reserved.</div>
   </div>
 </footer>
 
 <!-- CART DRAWER -->
 <div class="cart-drawer" id="cartDrawer">
-  <div class="cart-header">
-    <h3><i class="fa fa-shopping-cart" style="margin-right:7px"></i> Your Cart</h3>
-    <button class="cart-close" onclick="toggleCart()"><i class="fa fa-times"></i></button>
-  </div>
-  <div class="cart-items" id="cartItems">
-    <div class="cart-empty" id="cartEmpty">
-      <i class="fa fa-shopping-cart"></i>
-      <p style="font-size:14px;font-weight:600;margin-bottom:5px">Your cart is empty</p>
-      <p style="font-size:12.5px">Add some products to get started</p>
-    </div>
-  </div>
-  <div class="cart-footer" id="cartFooter" style="display:none">
-    <div class="cart-total"><span>Total</span><span id="cartTotal">R0</span></div>
-    <button class="btn-checkout" onclick="checkout()">Order via WhatsApp</button>
-  </div>
+  <div class="cart-header"><h3><i class="fa fa-shopping-cart" style="margin-right:7px"></i> Your Cart</h3><button class="cart-close" onclick="toggleCart()"><i class="fa fa-times"></i></button></div>
+  <div class="cart-items" id="cartItems"><div class="cart-empty" id="cartEmpty"><i class="fa fa-shopping-cart"></i><p style="font-size:14px;font-weight:600;margin-bottom:5px">Your cart is empty</p><p style="font-size:12.5px">Add some products to get started</p></div></div>
+  <div class="cart-footer" id="cartFooter" style="display:none"><div class="cart-total"><span>Total</span><span id="cartTotal">R0</span></div><button class="btn-checkout" onclick="checkout()">Order via WhatsApp</button></div>
 </div>
 <div class="overlay" id="cartOverlay" onclick="toggleCart()"></div>
 
-<!-- PDP PAGE -->
+<!-- PRODUCT DETAIL PAGE -->
 <div class="pdp-page" id="pdpPage">
-  <div class="pdp-topbar">
-    <button class="pdp-back" onclick="closePDP()"><i class="fa fa-arrow-left"></i> Back</button>
-    <div class="pdp-breadcrumb">Home › <span id="pdpBreadCat"></span> › <span id="pdpBreadName"></span></div>
-  </div>
+  <div class="pdp-topbar"><button class="pdp-back" onclick="closePDP()"><i class="fa fa-arrow-left"></i> Back</button><div class="pdp-breadcrumb">Home › <span id="pdpBreadCat"></span> › <span id="pdpBreadName"></span></div></div>
   <div class="pdp-inner">
-    <div class="pdp-main">
-      <div>
-        <div class="pdp-main-img" id="pdpMainImgWrap"></div>
-        <div class="pdp-thumbs" id="pdpThumbs"></div>
-      </div>
-      <div id="pdpInfo"></div>
-    </div>
+    <div class="pdp-main"><div><div class="pdp-main-img" id="pdpMainImgWrap"></div><div class="pdp-thumbs" id="pdpThumbs"></div></div><div id="pdpInfo"></div></div>
     <div id="pdpRelated"></div>
   </div>
 </div>
@@ -1152,200 +509,6 @@ footer{background:#fff;border-top:1px solid var(--border);padding:52px 24px 0}
 <div class="toast" id="toast"></div>
 <a class="wa-float" href="https://wa.me/27838687662" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<script>
-const products = [
-  // iPhones
-  {id:1,name:"Apple iPhone 17",category:"iPhone",price:14000,oldPrice:15500,img:"Apple iPhone 17.webp",desc:"iPhone 17 — Brand New Sealed. All colours. 1-year warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:5,badge:"Brand New"},
-  {id:2,name:"Apple iPhone 16 Pro",category:"iPhone",price:12500,oldPrice:13500,img:"Apple iPhone 16, 128GB,.jpg",desc:"iPhone 16 Pro 128GB — Brand New Sealed. Desert Titanium, Black & more.",colors:["#c0a060","#1c1c1e","#d4d4d4"],stock:6,badge:"Brand New"},
-  {id:3,name:"Apple iPhone 16",category:"iPhone",price:9500,oldPrice:10500,img:"Apple iPhone 16.jpg",desc:"iPhone 16 128GB — Brand New Sealed. All colours available. Fast delivery.",colors:["#1c1c1e","#f0a0b8","#3a7aaa","#000"],stock:8,badge:"Brand New"},
-  {id:4,name:"Apple iPhone 16 Plus",category:"iPhone",price:11500,oldPrice:12500,img:"Apple iPhone 16 Plus.jpg",desc:"iPhone 16 Plus — Brand New Sealed. Big screen, big battery, all colours.",colors:["#1c1c1e","#c0c0c0","#3a7aaa"],stock:4,badge:"Brand New"},
-  {id:5,name:"Apple iPhone 15 Pro",category:"iPhone",price:9500,oldPrice:10500,img:"Apple iPhone 15 Pro.jpg",desc:"iPhone 15 Pro 128GB — Brand New Sealed. Natural Titanium, Black & White.",colors:["#c0c0c0","#1c1c1e","#e0e0d8"],stock:5,badge:"Brand New"},
-  {id:6,name:"Apple iPhone 15 Plus",category:"iPhone",price:7800,oldPrice:8500,img:"Apple iPhone 15 Plus.jpg",desc:"iPhone 15 Plus 128GB — Brand New Sealed. Pink, Yellow, Green, Blue & more.",colors:["#f0c0c8","#f5e060","#70b878","#5080c0"],stock:7,badge:"Brand New"},
-  {id:7,name:"Apple iPhone 15, 128GB",category:"iPhone",price:7000,oldPrice:7800,img:"Apple iPhone 15, 128GB.jpg",desc:"iPhone 15 128GB — Brand New Sealed. All colours. Courier 1–2 days SA.",colors:["#1c1c1e","#f0c0c8","#f0ece0"],stock:9,badge:"Brand New"},
-  {id:8,name:"Apple iPhone 15 Black",category:"iPhone",price:7000,oldPrice:7800,img:"Apple iPhone 15, 128GB, Black.jpg",desc:"iPhone 15 128GB Black — Brand New Sealed. Sleek black finish, fast delivery.",colors:["#1c1c1e"],stock:6,badge:"Brand New"},
-  {id:9,name:"Apple iPhone 14, Purple",category:"iPhone",price:6000,oldPrice:6800,img:"Apple iPhone 14, 128GB, Purple.jpg",desc:"iPhone 14 128GB Purple — Brand New Sealed. Beautiful deep purple colour.",colors:["#6a4a8a","#1c1c1e","#c0c0c0"],stock:5,badge:"Brand New"},
-  {id:10,name:"Apple iPhone 14",category:"iPhone",price:6000,oldPrice:6800,img:"Apple iPhone 14.jpg",desc:"iPhone 14 128GB — Brand New Sealed. Multiple colours. 1-year warranty.",colors:["#1c1c1e","#c0c0c0","#6a4a8a","#3a70b8"],stock:7,badge:"Brand New"},
-  {id:11,name:"Apple iPhone 13",category:"iPhone",price:5500,oldPrice:6200,img:"Apple iPhone 13.jpg",desc:"iPhone 13 128GB — Brand New Sealed. Midnight, Starlight, Blue, Pink & more.",colors:["#1c1c1e","#f0ece0","#3a5a9a","#e8a0b8"],stock:8,badge:"Brand New"},
-  {id:12,name:"Apple iPhone 13 Pro",category:"iPhone",price:5500,oldPrice:6200,img:"Apple iPhone 13 1.jpg",desc:"iPhone 13 128GB — Brand New Sealed. All original colours available.",colors:["#1c1c1e","#38a860","#f0ece0"],stock:6,badge:"Brand New"},
-  {id:13,name:"Apple iPhone 12 Mini",category:"iPhone",price:3800,oldPrice:4200,img:"Apple iPhone 12 Mini.jpg",desc:"iPhone 12 Mini 64GB — Brand New Sealed. Compact powerhouse. All colours.",colors:["#1c1c1e","#3a5a9a","#38a860","#c02020"],stock:9,badge:"Brand New"},
-  {id:14,name:"Apple iPhone 11",category:"iPhone",price:3200,oldPrice:3600,img:"Apple iPhone 11.jpg",desc:"iPhone 11 64GB — Brand New Sealed. Purple, Black, White, Yellow, Green & Red.",colors:["#8a60b8","#1c1c1e","#f0f0f0","#d8d060","#38a860","#c02020"],stock:10,badge:"Brand New"},
-  {id:15,name:"Apple iPhone Air",category:"iPhone",price:15000,oldPrice:16500,img:"Apple iPhone Air.jpg",desc:"iPhone Air — Brand New Sealed. The thinnest iPhone ever made.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:3,badge:"Brand New"},
-  // MacBooks
-  {id:16,name:"Apple MacBook Pro 2024",category:"MacBook",price:18000,oldPrice:20000,img:"Apple MacBook Pro 2024.jpg",desc:"MacBook Pro M4 2024 — Brand New Sealed. 16GB RAM, 512GB SSD. Space Black.",colors:["#1c1c1e","#c0c0c0"],stock:2,badge:"Brand New"},
-  {id:17,name:"Apple MacBook Air 2024",category:"MacBook",price:14000,oldPrice:15500,img:"Apple 2024 MacBook Air.jpg",desc:"MacBook Air M3 2024 — Brand New Sealed. 8GB RAM, 256GB SSD. All colours.",colors:["#1c1c1e","#c8baa8","#a0c0c8","#f0ece0"],stock:4,badge:"Brand New"},
-  {id:18,name:"Apple MacBook Air M2 2023",category:"MacBook",price:8500,oldPrice:9500,img:"2023 Apple MacBook Air.jpg",desc:"MacBook Air M2 2023 — Brand New Sealed. 8GB RAM, 256GB SSD. Midnight & Starlight.",colors:["#1c1c1e","#f0ece0"],stock:5,badge:"Brand New"},
-  {id:19,name:"Apple MacBook M2 2023",category:"MacBook",price:9000,oldPrice:10000,img:"2023 Apple MacBook.jpg",desc:"Apple MacBook 2023 — Brand New Sealed. M2 chip, fast and powerful.",colors:["#1c1c1e","#c0c0c0"],stock:4,badge:"Brand New"},
-  {id:20,name:"Apple MacBook Pro M3 Pro 2023",category:"MacBook",price:22000,oldPrice:24000,img:"Apple 2023 MacBook Pro with Apple.jpg",desc:"MacBook Pro M3 Pro 2023 — Brand New Sealed. 18GB RAM, 512GB SSD.",colors:["#c0c0c0","#1c1c1e"],stock:2,badge:"Brand New"},
-  {id:21,name:"MacBook Neo 13-inch 2026",category:"MacBook",price:16000,oldPrice:17500,img:"2026 MacBook Neo 13-inch.jpg",desc:"MacBook Neo 2026 Edition — Brand New Sealed. Latest M-series chip. 13-inch.",colors:["#1c1c1e","#c0c0c0"],stock:3,badge:"Brand New"},
-  {id:22,name:"Apple MacBook Air M1 2021",category:"MacBook",price:7500,oldPrice:8500,img:"Apple 2021 MacBook.jpg",desc:"MacBook Air M1 2021 — Brand New Sealed. 8GB RAM, 256GB SSD. Gold & Space Grey.",colors:["#c8b090","#808080"],stock:6,badge:"Brand New"},
-  // Watches
-  {id:23,name:"Apple Watch Ultra",category:"Watch",price:6500,oldPrice:7200,img:"Apple Watch Ultra.jpg",desc:"Apple Watch Ultra — Brand New Sealed. GPS + Cellular, Titanium case, Ocean Band.",colors:["#c0c0c0","#f5a020"],stock:3,badge:"Brand New"},
-  {id:24,name:"Apple Watch Ultra GPS",category:"Watch",price:6500,oldPrice:7200,img:"Apple Watch Ultra [GPS.webp",desc:"Apple Watch Ultra GPS — Brand New Sealed. Adventure-ready titanium smartwatch.",colors:["#c0c0c0"],stock:4,badge:"Brand New"},
-  {id:25,name:"Apple Watch Series 8",category:"Watch",price:4000,oldPrice:4500,img:"Apple Watch Series 8.jpg",desc:"Apple Watch Series 8 GPS 45mm — Brand New Sealed. Multiple colours.",colors:["#1c1c1e","#f0f0f0","#c02020","#e8c0b8"],stock:5,badge:"Brand New"},
-  {id:26,name:"Apple Watch Series 7",category:"Watch",price:3000,oldPrice:3400,img:"Apple Watch Series 7.jpg",desc:"Apple Watch Series 7 — Brand New Sealed. Green, Blue, Red, Midnight & Starlight.",colors:["#38a860","#3a70b8","#c02020"],stock:7,badge:"Brand New"},
-  {id:27,name:"Apple Watch Series 6",category:"Watch",price:2500,oldPrice:2900,img:"Apple Watch Series 6.jpg",desc:"Apple Watch Series 6 — Brand New Sealed. Always-on Retina display.",colors:["#1c1c1e","#c02020","#3a70b8"],stock:8,badge:"Brand New"},
-  {id:28,name:"Apple Watch SE",category:"Watch",price:2000,oldPrice:2400,img:"Apple Watch SE.jpg",desc:"Apple Watch SE — Brand New Sealed. Essential smartwatch at an affordable price.",colors:["#1c1c1e","#f0ece0","#c0c0c0"],stock:10,badge:"Brand New"},
-  // iPads
-  {id:29,name:"Apple iPad Pro M4 2024",category:"iPad",price:14000,oldPrice:15500,img:"Apple iPad Pro 2024.jpg",desc:"iPad Pro M4 2024 — Brand New Sealed. 11-inch Wi-Fi 256GB. Ultra Retina display.",colors:["#c0c0c0","#1c1c1e"],stock:4,badge:"Brand New"},
-  {id:30,name:"Apple iPad Air M3 2025",category:"iPad",price:8500,oldPrice:9500,img:"2025 Apple iPad Air.jpg",desc:"iPad Air M3 2025 — Brand New Sealed. 11-inch Wi-Fi 128GB. All colours.",colors:["#4a7aaa","#e8a0b8","#9a70c8","#f0ece0"],stock:6,badge:"Brand New"},
-  {id:31,name:"Apple iPad Air 2025",category:"iPad",price:8500,oldPrice:9500,img:"Apple 2025 iPad Air.jpg",desc:"iPad Air M3 2025 — Brand New Sealed. Thin, light and powerful.",colors:["#4a7aaa","#f0ece0"],stock:5,badge:"Brand New"},
-  {id:32,name:"Apple iPad Pro",category:"iPad",price:12000,oldPrice:13500,img:"Apple iPad Pro.jpg",desc:"Apple iPad Pro — Brand New Sealed. M-series chip, ProMotion display.",colors:["#c0c0c0","#1c1c1e"],stock:4,badge:"Brand New"},
-  {id:33,name:"Apple iPad 10th Gen 2022",category:"iPad",price:6000,oldPrice:6800,img:"Apple 2022 iPad.jpg",desc:"iPad 10th Gen 2022 — Brand New Sealed. Wi-Fi 64GB. Blue, Pink, Yellow, Silver.",colors:["#4a7aaa","#e8a0b8","#f5e060","#c0c0c0"],stock:8,badge:"Brand New"},
-  {id:34,name:"Apple iPad 8th Gen 2020",category:"iPad",price:5000,oldPrice:5800,img:"2020 Apple iPad.jpg",desc:"iPad 8th Gen 2020 — Brand New Sealed. A12 Bionic, 32GB Wi-Fi.",colors:["#c0c0c0","#808080"],stock:7,badge:"Brand New"},
-  // AirPods
-  {id:35,name:"AirPods Pro 2nd Gen",category:"AirPods",price:900,oldPrice:1100,img:"Apple iPhone 15 Pro.jpg",desc:"AirPods Pro 2nd Generation — Brand New Sealed. Active Noise Cancellation.",colors:["#f0f0f0"],stock:12,badge:"Brand New"},
-  {id:36,name:"AirPods 3rd Gen",category:"AirPods",price:1100,oldPrice:1300,img:"Apple iPhone 16.jpg",desc:"AirPods 3rd Generation — Brand New Sealed. Spatial audio, lightning case.",colors:["#f0f0f0"],stock:10,badge:"Brand New"},
-  {id:37,name:"AirPods 4th Gen",category:"AirPods",price:1500,oldPrice:1750,img:"Apple iPhone 16 Plus.jpg",desc:"AirPods 4th Generation — Brand New Sealed. Latest Apple audio technology.",colors:["#f0f0f0"],stock:8,badge:"Brand New"},
-  {id:38,name:"AirPods Max",category:"AirPods",price:2500,oldPrice:2900,img:"Apple iPad Pro 2024.jpg",desc:"AirPods Max — Brand New Sealed. Premium over-ear headphones with ANC.",colors:["#1c1c1e","#c0c0c0","#e8d0a8"],stock:5,badge:"Brand New"},
-];
-
-const catCards = [
-  {name:"iPhones",sub:"iPhone 8 to iPhone 17 Pro Max",color:"#1c1c1e",icon:"fa-mobile-alt",section:"section-iphone"},
-  {name:"MacBooks",sub:"Air & Pro — M1 to M4",color:"#0a3a7a",icon:"fa-laptop",section:"section-macbooks"},
-  {name:"Watches",sub:"Series 2 to Ultra",color:"#023e8a",icon:"fa-clock",section:"section-watches"},
-  {name:"iPads",sub:"Air, Pro, Mini — All Models",color:"#0077b6",icon:"fa-tablet-alt",section:"section-ipads"},
-  {name:"AirPods",sub:"All Generations",color:"#166534",icon:"fa-headphones",section:"section-airpods"},
-  {name:"Cash on Delivery",sub:"Select Areas Available",color:"#7c3aed",icon:"fa-money-bill",section:"deals"},
-  {name:"15K+ Customers",sub:"Trusted in South Africa",color:"#c0392b",icon:"fa-heart",section:"footer"},
-  {name:"Nationwide Courier",sub:"1–2 Days Delivery",color:"#c05621",icon:"fa-truck",section:"deals"},
-];
-
-let cart=[],activeFilter='All',cartOpen=false,wishlist=new Set();
-const pagState={deals:{page:0},weekly:{page:0},mostSelling:{page:0}};
-const PS=3;
-
-function card(p){
-  const hasOld=p.oldPrice&&p.oldPrice>p.price;
-  const isWish=wishlist.has(p.id);
-  return `<div class="product-card" onclick="openPDP(${p.id})">
-    <div class="product-img">
-      <div style="position:absolute;top:9px;left:9px;background:var(--blue-dark);color:#fff;font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:11px;z-index:2">${p.badge}</div>
-      <img src="${p.img}" alt="${p.name}" loading="lazy">
-      <button class="wishlist-btn${isWish?' active':''}" onclick="toggleWish(event,${p.id})"><i class="fa fa-heart"></i></button>
-    </div>
-    <div class="product-info">
-      <div class="product-name">${p.name}</div>
-      <div class="product-desc">${p.desc.substring(0,56)}...</div>
-      <div class="product-stars"><span class="stars">★★★★★</span><span class="review-count">(${40+p.id*7})</span></div>
-      <div class="product-bottom">
-        <div class="product-price">R${p.price.toLocaleString()}${hasOld?`<span class="old-price">R${p.oldPrice.toLocaleString()}</span>`:''}</div>
-        <button class="btn-cart" onclick="addToCart(event,${p.id})">Add to Cart</button>
-      </div>
-    </div>
-  </div>`;
-}
-
-function renderGrid(filterFn,id){
-  const el=document.getElementById(id);
-  if(el)el.innerHTML=products.filter(filterFn).map(card).join('')||'<div style="grid-column:1/-1;text-align:center;padding:44px;color:var(--text-muted)">No products found</div>';
-}
-
-function renderAll(){
-  renderGrid(p=>p.category==='iPhone','iphoneGrid');
-  renderGrid(p=>p.category==='MacBook','macbookGrid');
-  renderGrid(p=>p.category==='Watch','watchGrid');
-  renderGrid(p=>p.category==='iPad','ipadGrid');
-  renderGrid(p=>p.category==='AirPods','airpodsGrid');
-}
-
-function getProds(k){
-  if(k==='deals'){return activeFilter==='All'?products:products.filter(p=>p.category===activeFilter);}
-  if(k==='weekly'){if(!window._wo)window._wo=[...products].sort(()=>Math.random()-.5);return window._wo;}
-  return[...products].sort((a,b)=>b.stock-a.stock);
-}
-
-function renderSlider(k){
-  const prods=getProds(k),page=pagState[k].page,total=Math.ceil(prods.length/PS);
-  const slice=prods.slice(page*PS,page*PS+PS);
-  document.getElementById(k+'Grid').innerHTML=slice.map(card).join('');
-  const dots=Array.from({length:total},(_,i)=>`<button class="pag-dot${i===page?' active':''}" onclick="goPage('${k}',${i})"></button>`).join('');
-  document.getElementById(k+'Nav').innerHTML=`<div class="pag-dots">${dots}</div><button class="pag-btn" onclick="goPage('${k}',${page-1})" ${page===0?'disabled':''}>&#8249;</button><button class="pag-btn" onclick="goPage('${k}',${page+1})" ${page>=total-1?'disabled':''}>&#8250;</button>`;
-}
-
-function goPage(k,p){const t=Math.ceil(getProds(k).length/PS);if(p<0||p>=t)return;pagState[k].page=p;renderSlider(k);}
-function setFilter(f,el){activeFilter=f;document.querySelectorAll('#filterPills .pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');pagState.deals.page=0;renderSlider('deals');}
-function renderBrands(){document.getElementById('brandsGrid')&&(document.getElementById('brandsGrid').innerHTML=catCards.map(c=>`<div class="brand-card" onclick="scrollToSection('${c.section}')"><div style="width:44px;height:44px;border-radius:50%;background:${c.color};display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0"><i class="fa ${c.icon}"></i></div><div><div class="brand-name">${c.name}</div><div class="brand-sub">${c.sub}</div></div></div>`).join(''));}
-
-function init(){renderAll();renderSlider('deals');renderSlider('weekly');renderSlider('mostSelling');}
-
-function toggleWish(e,id){e.stopPropagation();if(wishlist.has(id))wishlist.delete(id);else wishlist.add(id);renderAll();renderSlider('deals');renderSlider('weekly');renderSlider('mostSelling');showToast(wishlist.has(id)?'Added to wishlist':'Removed from wishlist');}
-function addToCart(e,id){e.stopPropagation();const p=products.find(x=>x.id===id),ex=cart.find(x=>x.id===id);if(ex)ex.qty++;else cart.push({...p,qty:1});updateCartUI();showToast(`${p.name} added to cart`);}
-function removeFromCart(id){cart=cart.filter(x=>x.id!==id);updateCartUI();}
-function changeQty(id,d){const i=cart.find(x=>x.id===id);if(!i)return;i.qty+=d;if(i.qty<=0)removeFromCart(id);else updateCartUI();}
-function updateCartUI(){
-  const total=cart.reduce((s,i)=>s+i.qty,0);
-  document.getElementById('cartCount').textContent=total;
-  const empty=cart.length===0;
-  document.getElementById('cartEmpty').style.display=empty?'block':'none';
-  document.getElementById('cartFooter').style.display=empty?'none':'block';
-  if(!empty){
-    document.getElementById('cartTotal').textContent='R'+cart.reduce((s,i)=>s+(i.price*i.qty),0).toLocaleString();
-    document.getElementById('cartItems').innerHTML=`<div class="cart-empty" id="cartEmpty" style="display:none"></div>`+cart.map(i=>`<div class="cart-item"><img class="cart-item-img" src="${i.img}" alt="${i.name}"><div class="cart-item-info"><h4>${i.name}</h4><div class="cart-item-price">R${(i.price*i.qty).toLocaleString()}</div><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty(${i.id},-1)">−</button><span class="qty-num">${i.qty}</span><button class="qty-btn" onclick="changeQty(${i.id},1)">+</button></div></div><button class="cart-item-remove" onclick="removeFromCart(${i.id})"><i class="fa fa-trash"></i></button></div>`).join('');
-  }
-}
-function toggleCart(){cartOpen=!cartOpen;document.getElementById('cartDrawer').classList.toggle('open',cartOpen);document.getElementById('cartOverlay').classList.toggle('open',cartOpen);document.getElementById('overlay').classList.remove('open');document.getElementById('mobileNav').classList.remove('open');}
-function checkout(){if(!cart.length){showToast('Your cart is empty!');return;}const msg=`Hi Exclusive iPhones RSA! I'd like to order:\n${cart.map(i=>`- ${i.name} x${i.qty} = R${(i.price*i.qty).toLocaleString()}`).join('\n')}\nTotal: R${cart.reduce((s,i)=>s+(i.price*i.qty),0).toLocaleString()}`;window.open(`https://wa.me/27838687662?text=${encodeURIComponent(msg)}`,'_blank');}
-
-let pdpQty=1;
-function openPDP(id){
-  const p=products.find(x=>x.id===id);if(!p)return;
-  pdpQty=1;
-  document.getElementById('pdpBreadCat').textContent=p.category;
-  document.getElementById('pdpBreadName').textContent=p.name;
-  document.getElementById('pdpMainImgWrap').innerHTML=`<img id="pdpMainImg" src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:contain">`;
-  document.getElementById('pdpThumbs').innerHTML=[p.img,p.img,p.img].map((img,i)=>`<div class="pdp-thumb${i===0?' active':''}" onclick="pdpThumb(this,'${img}')"><img src="${img}" alt="" style="width:100%;height:100%;object-fit:contain"></div>`).join('');
-  const hasOld=p.oldPrice&&p.oldPrice>p.price;
-  const dots=p.colors.map((c,i)=>`<div class="pdp-color-dot${i===0?' active':''}" style="background:${c}" onclick="pdpColor(this)"></div>`).join('');
-  document.getElementById('pdpInfo').innerHTML=`<div class="pdp-badge">${p.badge}</div><h1 class="pdp-name">${p.name}</h1><div class="pdp-stars-row"><span class="stars" style="font-size:15px">★★★★★</span>4.9 &nbsp;|&nbsp; ${40+p.id*7} reviews</div><div class="pdp-price-row"><div class="pdp-price">R${p.price.toLocaleString()}</div>${hasOld?`<div class="pdp-old-price">R${p.oldPrice.toLocaleString()}</div>`:''}</div><div class="pdp-monthly">Order, Pay, Receive — courier 1–2 days anywhere in SA</div><div class="pdp-desc">${p.desc}</div><div class="pdp-label">Choose a Colour</div><div class="pdp-colors">${dots}</div><div class="pdp-stock-note"><i class="fa fa-fire"></i> Only ${p.stock} items left</div><div class="pdp-qty-row"><div class="pdp-label" style="margin:0">Qty</div><div class="pdp-qty-ctrl"><button class="qty-btn" onclick="pdpQtyChange(-1)">−</button><span class="pdp-qty-ctrl" style="all:unset"><span class="pdp-qty-num qty-num" id="pdpQtyNum" style="font-size:14.5px;font-weight:700;min-width:34px;text-align:center;border-left:1px solid var(--border);border-right:1px solid var(--border);height:38px;display:flex;align-items:center;justify-content:center;padding:0 7px">1</span></span><button class="qty-btn" onclick="pdpQtyChange(1)">+</button></div></div><div class="pdp-btns"><button class="pdp-btn-buy" onclick="pdpBuy(${p.id})"><i class="fab fa-whatsapp"></i> Buy via WhatsApp</button><button class="pdp-btn-cart" onclick="pdpCart(${p.id})">Add to Cart</button></div><div class="pdp-delivery"><div class="pdp-delivery-item"><i class="fa fa-truck"></i><div><h5>Free Delivery</h5><p>Nationwide via Postnet, PEP & The Courier Guy — 1–2 days</p></div></div><div class="pdp-delivery-item"><i class="fa fa-shield-alt"></i><div><h5>Brand New & Sealed</h5><p>100% brand new in box, warranty included</p></div></div><div class="pdp-delivery-item"><i class="fab fa-whatsapp"></i><div><h5>WhatsApp Support 24/7</h5><p>+27 83 868 7662</p></div></div></div>`;
-  const rel=products.filter(x=>x.category===p.category&&x.id!==p.id).slice(0,4);
-  document.getElementById('pdpRelated').innerHTML=rel.length?`<h3>You May Also Like</h3><div class="pdp-related-grid">${rel.map(card).join('')}</div>`:'';
-  document.getElementById('pdpPage').classList.add('open');
-  document.getElementById('pdpPage').scrollTop=0;
-  document.body.style.overflow='hidden';
-}
-function closePDP(){document.getElementById('pdpPage').classList.remove('open');document.body.style.overflow='';}
-function pdpThumb(el,src){document.getElementById('pdpMainImg').src=src;document.querySelectorAll('.pdp-thumb').forEach(t=>t.classList.remove('active'));el.classList.add('active');}
-function pdpColor(el){document.querySelectorAll('.pdp-color-dot').forEach(d=>d.classList.remove('active'));el.classList.add('active');}
-function pdpQtyChange(d){pdpQty=Math.max(1,pdpQty+d);document.getElementById('pdpQtyNum').textContent=pdpQty;}
-function pdpCart(id){const p=products.find(x=>x.id===id),ex=cart.find(x=>x.id===id);if(ex)ex.qty+=pdpQty;else cart.push({...p,qty:pdpQty});updateCartUI();showToast(`${p.name} added to cart`);closePDP();setTimeout(toggleCart,350);}
-function pdpBuy(id){const p=products.find(x=>x.id===id);const msg=`Hi! I want to order: ${p.name} x${pdpQty} = R${(p.price*pdpQty).toLocaleString()}`;window.open(`https://wa.me/27838687662?text=${encodeURIComponent(msg)}`,'_blank');}
-
-function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');document.getElementById('overlay').classList.toggle('open');}
-function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
-
-function handleSearch(e){
-  const q=e.target.value.toLowerCase().trim();
-  const allSec=document.getElementById('section-all');
-  if(!q){allSec.style.display='none';return;}
-  const f=products.filter(p=>p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)||p.category.toLowerCase().includes(q));
-  document.getElementById('allGrid').innerHTML=f.length?f.map(card).join(''):`<div style="grid-column:1/-1;text-align:center;padding:44px;color:var(--text-muted)"><i class="fa fa-search" style="font-size:32px;margin-bottom:11px;display:block"></i><p>No products found for "${e.target.value}"</p></div>`;
-  allSec.style.display='block';
-  scrollToSection('section-all');
-}
-function clearSearch(){
-  document.getElementById('searchInput').value='';
-  document.getElementById('section-all').style.display='none';
-}
-
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
-function scrollToSection(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
-
-/* FAQ TOGGLE */
-function toggleFaq(questionEl){
-  const item=questionEl.closest('.faq-item');
-  const isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i=>{
-    i.classList.remove('open');
-    i.querySelector('.faq-icon i').className='fa fa-plus';
-  });
-  if(!isOpen){
-    item.classList.add('open');
-    item.querySelector('.faq-icon i').className='fa fa-times';
-  }
-}
-
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('pdpPage').classList.contains('open'))closePDP();});
-init();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
