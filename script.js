@@ -1,7 +1,7 @@
 // ============================================================
 //  JSONBin Config — ONE bin, ONE key, used everywhere
 // ============================================================
-const BIN_ID = "6a279265b5be735e4f84aea6";
+const BIN_ID = "6a2792bcda38895dfe9ddc93";
 const API_KEY = "$2a$10$fzrT1ZEHuBXP67bUevLiueTIEt.7.ZDgL6vb11rv9GFxUFUjPpiyW";
 const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 
