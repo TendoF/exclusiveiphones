@@ -13,79 +13,119 @@ const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 //  the site still works perfectly using this list.
 // ============================================================
 const HARDCODED_PRODUCTS = [
-  {id:"1",name:"Apple iPhone 17",category:"iPhone",price:14000,oldPrice:15500,img:"Apple iPhone 17.webp",desc:"iPhone 17 — Brand New Sealed. All colours. 1-year warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:5,badge:"Brand New",reviews:287},
-  {id:"2",name:"Apple iPhone 16 Pro",category:"iPhone",price:12500,oldPrice:13500,img:"Apple iPhone 16, 128GB,.jpg",desc:"iPhone 16 Pro 128GB — Brand New Sealed. Desert Titanium, Black & more.",colors:["#c0a060","#1c1c1e","#d4d4d4"],stock:6,badge:"Brand New",reviews:341},
-  {id:"3",name:"Apple iPhone 16",category:"iPhone",price:9500,oldPrice:10500,img:"Apple iPhone 16.jpg",desc:"iPhone 16 128GB — Brand New Sealed. All colours available. Fast delivery.",colors:["#1c1c1e","#f0a0b8","#3a7aaa"],stock:8,badge:"Brand New",reviews:412},
-  {id:"4",name:"Apple iPhone 16 Plus",category:"iPhone",price:11500,oldPrice:12500,img:"Apple iPhone 16 Plus.jpg",desc:"iPhone 16 Plus — Brand New Sealed. Big screen, big battery, all colours.",colors:["#1c1c1e","#c0c0c0","#3a7aaa"],stock:4,badge:"Brand New",reviews:198},
-  {id:"5",name:"Apple iPhone 15 Pro",category:"iPhone",price:9500,oldPrice:10500,img:"Apple iPhone 15 Pro.jpg",desc:"iPhone 15 Pro 128GB — Brand New Sealed. Natural Titanium, Black & White.",colors:["#c0c0c0","#1c1c1e","#e0e0d8"],stock:5,badge:"Brand New",reviews:523},
-  {id:"6",name:"Apple iPhone 15 Plus",category:"iPhone",price:7800,oldPrice:8500,img:"Apple iPhone 15 Plus.jpg",desc:"iPhone 15 Plus 128GB — Brand New Sealed. Pink, Yellow, Green, Blue & more.",colors:["#f0c0c8","#f5e060","#70b878","#5080c0"],stock:7,badge:"Brand New",reviews:276},
-  {id:"7",name:"Apple iPhone 15, 128GB",category:"iPhone",price:7000,oldPrice:7800,img:"Apple iPhone 15, 128GB.jpg",desc:"iPhone 15 128GB — Brand New Sealed. All colours. Courier 1–2 days SA.",colors:["#1c1c1e","#f0c0c8","#f0ece0"],stock:9,badge:"Brand New",reviews:389},
-  {id:"8",name:"Apple iPhone 15 Black",category:"iPhone",price:7000,oldPrice:7800,img:"Apple iPhone 15, 128GB, Black.jpg",desc:"iPhone 15 128GB Black — Brand New Sealed. Sleek black finish, fast delivery.",colors:["#1c1c1e"],stock:6,badge:"Brand New",reviews:211},
-  {id:"9",name:"Apple iPhone 14, Purple",category:"iPhone",price:6000,oldPrice:6800,img:"Apple iPhone 14, 128GB, Purple.jpg",desc:"iPhone 14 128GB Purple — Brand New Sealed. Beautiful deep purple colour.",colors:["#6a4a8a","#1c1c1e","#c0c0c0"],stock:5,badge:"Brand New",reviews:304},
-  {id:"10",name:"Apple iPhone 14",category:"iPhone",price:6000,oldPrice:6800,img:"Apple iPhone 14.jpg",desc:"iPhone 14 128GB — Brand New Sealed. Multiple colours. 1-year warranty.",colors:["#1c1c1e","#c0c0c0","#6a4a8a","#3a70b8"],stock:7,badge:"Brand New",reviews:445},
-  {id:"11",name:"Apple iPhone 13",category:"iPhone",price:5500,oldPrice:6200,img:"Apple iPhone 13.jpg",desc:"iPhone 13 128GB — Brand New Sealed. Midnight, Starlight, Blue, Pink & more.",colors:["#1c1c1e","#f0ece0","#3a5a9a","#e8a0b8"],stock:8,badge:"Brand New",reviews:612},
-  {id:"12",name:"Apple iPhone 13 Pro",category:"iPhone",price:6500,oldPrice:7200,img:"Apple iPhone 13 1.jpg",desc:"iPhone 13 Pro 128GB — Brand New Sealed. All original colours available.",colors:["#1c1c1e","#38a860","#f0ece0"],stock:6,badge:"Brand New",reviews:398},
-  {id:"13",name:"Apple iPhone 12 Mini",category:"iPhone",price:3800,oldPrice:4200,img:"Apple iPhone 12 Mini.jpg",desc:"iPhone 12 Mini 64GB — Brand New Sealed. Compact powerhouse. All colours.",colors:["#1c1c1e","#3a5a9a","#38a860","#c02020"],stock:9,badge:"Brand New",reviews:287},
-  {id:"14",name:"Apple iPhone 11",category:"iPhone",price:3200,oldPrice:3600,img:"Apple iPhone 11.jpg",desc:"iPhone 11 64GB — Brand New Sealed. Purple, Black, White, Yellow, Green & Red.",colors:["#8a60b8","#1c1c1e","#f0f0f0","#d8d060","#38a860","#c02020"],stock:10,badge:"Brand New",reviews:734},
-  {id:"15",name:"Apple iPhone Air",category:"iPhone",price:15000,oldPrice:16500,img:"Apple iPhone Air.jpg",desc:"iPhone Air — Brand New Sealed. The thinnest iPhone ever made.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:3,badge:"Brand New",reviews:89},
-  {id:"16",name:"Apple MacBook Pro 2024",category:"MacBook",price:18000,oldPrice:20000,img:"Apple MacBook Pro 2024.jpg",desc:"MacBook Pro M4 2024 — Brand New Sealed. 16GB RAM, 512GB SSD. Space Black.",colors:["#1c1c1e","#c0c0c0"],stock:2,badge:"Brand New",reviews:156},
-  {id:"17",name:"Apple MacBook Air 2024",category:"MacBook",price:14000,oldPrice:15500,img:"Apple 2024 MacBook Air.jpg",desc:"MacBook Air M3 2024 — Brand New Sealed. 8GB RAM, 256GB SSD. All colours.",colors:["#1c1c1e","#c8baa8","#a0c0c8","#f0ece0"],stock:4,badge:"Brand New",reviews:203},
-  {id:"18",name:"Apple MacBook Air M2 2023",category:"MacBook",price:8500,oldPrice:9500,img:"2023 Apple MacBook Air.jpg",desc:"MacBook Air M2 2023 — Brand New Sealed. 8GB RAM, 256GB SSD. Midnight & Starlight.",colors:["#1c1c1e","#f0ece0"],stock:5,badge:"Brand New",reviews:312},
-  {id:"19",name:"Apple MacBook M2 2023",category:"MacBook",price:9000,oldPrice:10000,img:"2023 Apple MacBook.jpg",desc:"Apple MacBook 2023 — Brand New Sealed. M2 chip, fast and powerful.",colors:["#1c1c1e","#c0c0c0"],stock:4,badge:"Brand New",reviews:178},
-  {id:"20",name:"Apple MacBook Pro M3 Pro 2023",category:"MacBook",price:22000,oldPrice:24000,img:"Apple 2023 MacBook Pro with Apple.jpg",desc:"MacBook Pro M3 Pro 2023 — Brand New Sealed. 18GB RAM, 512GB SSD.",colors:["#c0c0c0","#1c1c1e"],stock:2,badge:"Brand New",reviews:94},
-  {id:"21",name:"MacBook Neo 13-inch 2026",category:"MacBook",price:16000,oldPrice:17500,img:"2026 MacBook Neo 13-inch.jpg",desc:"MacBook Neo 2026 Edition — Brand New Sealed. Latest M-series chip. 13-inch.",colors:["#1c1c1e","#c0c0c0"],stock:3,badge:"Brand New",reviews:67},
-  {id:"22",name:"Apple MacBook Air M1 2021",category:"MacBook",price:7500,oldPrice:8500,img:"Apple 2021 MacBook.jpg",desc:"MacBook Air M1 2021 — Brand New Sealed. 8GB RAM, 256GB SSD. Gold & Space Grey.",colors:["#c8b090","#808080"],stock:6,badge:"Brand New",reviews:445},
-  {id:"23",name:"Apple Watch Ultra",category:"Watch",price:6500,oldPrice:7200,img:"Apple Watch Ultra.jpg",desc:"Apple Watch Ultra — Brand New Sealed. GPS + Cellular, Titanium case, Ocean Band.",colors:["#c0c0c0","#f5a020"],stock:3,badge:"Brand New",reviews:189},
-  {id:"24",name:"Apple Watch Ultra GPS",category:"Watch",price:6500,oldPrice:7200,img:"Apple Watch Ultra [GPS.webp",desc:"Apple Watch Ultra GPS — Brand New Sealed. Adventure-ready titanium smartwatch.",colors:["#c0c0c0"],stock:4,badge:"Brand New",reviews:143},
-  {id:"25",name:"Apple Watch Series 8",category:"Watch",price:4000,oldPrice:4500,img:"Apple Watch Series 8.jpg",desc:"Apple Watch Series 8 GPS 45mm — Brand New Sealed. Multiple colours.",colors:["#1c1c1e","#f0f0f0","#c02020","#e8c0b8"],stock:5,badge:"Brand New",reviews:267},
-  {id:"26",name:"Apple Watch Series 7",category:"Watch",price:3000,oldPrice:3400,img:"Apple Watch Series 7.jpg",desc:"Apple Watch Series 7 — Brand New Sealed. Green, Blue, Red, Midnight & Starlight.",colors:["#38a860","#3a70b8","#c02020"],stock:7,badge:"Brand New",reviews:334},
-  {id:"27",name:"Apple Watch Series 6",category:"Watch",price:2500,oldPrice:2900,img:"Apple Watch Series 6.jpg",desc:"Apple Watch Series 6 — Brand New Sealed. Always-on Retina display.",colors:["#1c1c1e","#c02020","#3a70b8"],stock:8,badge:"Brand New",reviews:412},
-  {id:"28",name:"Apple Watch SE",category:"Watch",price:2000,oldPrice:2400,img:"Apple Watch SE.jpg",desc:"Apple Watch SE — Brand New Sealed. Essential smartwatch at an affordable price.",colors:["#1c1c1e","#f0ece0","#c0c0c0"],stock:10,badge:"Brand New",reviews:523},
-  {id:"29",name:"Apple iPad Pro M4 2024",category:"iPad",price:14000,oldPrice:15500,img:"Apple iPad Pro 2024.jpg",desc:"iPad Pro M4 2024 — Brand New Sealed. 11-inch Wi-Fi 256GB. Ultra Retina display.",colors:["#c0c0c0","#1c1c1e"],stock:4,badge:"Brand New",reviews:167},
-  {id:"30",name:"Apple iPad Air M3 2025",category:"iPad",price:8500,oldPrice:9500,img:"2025 Apple iPad Air.jpg",desc:"iPad Air M3 2025 — Brand New Sealed. 11-inch Wi-Fi 128GB. All colours.",colors:["#4a7aaa","#e8a0b8","#9a70c8","#f0ece0"],stock:6,badge:"Brand New",reviews:198},
-  {id:"31",name:"Apple iPad Air 2025",category:"iPad",price:8500,oldPrice:9500,img:"Apple 2025 iPad Air.jpg",desc:"iPad Air M3 2025 — Brand New Sealed. Thin, light and powerful.",colors:["#4a7aaa","#f0ece0"],stock:5,badge:"Brand New",reviews:145},
-  {id:"32",name:"Apple iPad Pro",category:"iPad",price:12000,oldPrice:13500,img:"Apple iPad Pro.jpg",desc:"Apple iPad Pro — Brand New Sealed. M-series chip, ProMotion display.",colors:["#c0c0c0","#1c1c1e"],stock:4,badge:"Brand New",reviews:223},
-  {id:"33",name:"Apple iPad 10th Gen 2022",category:"iPad",price:6000,oldPrice:6800,img:"Apple 2022 iPad.jpg",desc:"iPad 10th Gen 2022 — Brand New Sealed. Wi-Fi 64GB. Blue, Pink, Yellow, Silver.",colors:["#4a7aaa","#e8a0b8","#f5e060","#c0c0c0"],stock:8,badge:"Brand New",reviews:389},
-  {id:"34",name:"Apple iPad 8th Gen 2020",category:"iPad",price:5000,oldPrice:5800,img:"2020 Apple iPad.jpg",desc:"iPad 8th Gen 2020 — Brand New Sealed. A12 Bionic, 32GB Wi-Fi.",colors:["#c0c0c0","#808080"],stock:7,badge:"Brand New",reviews:456},
-  {id:"35",name:"AirPods Pro 2nd Gen",category:"AirPods",price:900,oldPrice:1100,img:"Apple AirPods Pro.jpg",desc:"AirPods Pro 2nd Generation — Brand New Sealed. Active Noise Cancellation.",colors:["#f0f0f0"],stock:12,badge:"Brand New",reviews:678},
-  {id:"36",name:"AirPods 3rd Gen",category:"AirPods",price:1100,oldPrice:1300,img:"Apple AirPods 3rd Gen.jpg",desc:"AirPods 3rd Generation — Brand New Sealed. Spatial audio, lightning case.",colors:["#f0f0f0"],stock:10,badge:"Brand New",reviews:534},
-  {id:"37",name:"AirPods 4th Gen",category:"AirPods",price:1500,oldPrice:1750,img:"Apple AirPods 4th Gen.jpg",desc:"AirPods 4th Generation — Brand New Sealed. Latest Apple audio technology.",colors:["#f0f0f0"],stock:8,badge:"Brand New",reviews:312},
-  {id:"38",name:"AirPods Max",category:"AirPods",price:2500,oldPrice:2900,img:"Apple AirPods Max.jpg",desc:"AirPods Max — Brand New Sealed. Premium over-ear headphones with ANC.",colors:["#1c1c1e","#c0c0c0","#e8d0a8"],stock:5,badge:"Brand New",reviews:245},
+  {id:"1",name:"Apple iPhone 8 (64GB)",category:"iPhone",price:1600,oldPrice:1800,img:"iPhone 8 (64GB).webp",desc:"iPhone 8 (64GB) \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:3,badge:"Brand New",reviews:412},
+  {id:"2",name:"Apple iPhone 8 (128GB)",category:"iPhone",price:1750,oldPrice:1950,img:"iPhone 8 (128GB).webp",desc:"iPhone 8 (128GB) \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:4,badge:"Brand New",reviews:356},
+  {id:"3",name:"Apple iPhone 8 Plus",category:"iPhone",price:2000,oldPrice:2250,img:"iPhone 8 Plus.jpg",desc:"iPhone 8 Plus \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:5,badge:"Brand New",reviews:298},
+  {id:"4",name:"Apple iPhone X",category:"iPhone",price:2000,oldPrice:2250,img:"iPhone X.jpg",desc:"iPhone X \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:6,badge:"Brand New",reviews:245},
+  {id:"5",name:"Apple iPhone XR",category:"iPhone",price:2200,oldPrice:2450,img:"iPhone XR.jpg",desc:"iPhone XR \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:7,badge:"Brand New",reviews:389},
+  {id:"6",name:"Apple iPhone XS",category:"iPhone",price:2100,oldPrice:2350,img:"iPhone XS.jpg",desc:"iPhone XS \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:8,badge:"Brand New",reviews:201},
+  {id:"7",name:"Apple iPhone XS Max",category:"iPhone",price:2500,oldPrice:2800,img:"iPhone XS Max.jpg",desc:"iPhone XS Max \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:5,badge:"Brand New",reviews:187},
+  {id:"8",name:"Apple iPhone 11",category:"iPhone",price:3000,oldPrice:3350,img:"iPhone 11.jpg",desc:"iPhone 11 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:4,badge:"Brand New",reviews:734},
+  {id:"9",name:"Apple iPhone 11 Pro",category:"iPhone",price:3500,oldPrice:3900,img:"iPhone 11 Pro.jpg",desc:"iPhone 11 Pro \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:6,badge:"Brand New",reviews:412},
+  {id:"10",name:"Apple iPhone 11 Pro Max",category:"iPhone",price:4000,oldPrice:4450,img:"iPhone 11 Pro Max.webp",desc:"iPhone 11 Pro Max \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:9,badge:"Brand New",reviews:389},
+  {id:"11",name:"Apple iPhone 12",category:"iPhone",price:4000,oldPrice:4450,img:"iPhone 12.webp",desc:"iPhone 12 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:3,badge:"Brand New",reviews:612},
+  {id:"12",name:"Apple iPhone 12 Mini",category:"iPhone",price:3500,oldPrice:3900,img:"iPhone 12 Mini.jpg",desc:"iPhone 12 Mini \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:4,badge:"Brand New",reviews:287},
+  {id:"13",name:"Apple iPhone 12 Pro",category:"iPhone",price:4500,oldPrice:5000,img:"iPhone 12 Pro.webp",desc:"iPhone 12 Pro \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:5,badge:"Brand New",reviews:356},
+  {id:"14",name:"Apple iPhone 12 Pro Max",category:"iPhone",price:5000,oldPrice:5550,img:"iPhone 12 Pro Max.jpg",desc:"iPhone 12 Pro Max \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:6,badge:"Brand New",reviews:298},
+  {id:"15",name:"Apple iPhone 13",category:"iPhone",price:5000,oldPrice:5550,img:"iPhone 13.jpg",desc:"iPhone 13 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:7,badge:"Brand New",reviews:612},
+  {id:"16",name:"Apple iPhone 13 Mini",category:"iPhone",price:4500,oldPrice:5000,img:"iPhone 13 Mini.jpg",desc:"iPhone 13 Mini \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:8,badge:"Brand New",reviews:245},
+  {id:"17",name:"Apple iPhone 13 Pro",category:"iPhone",price:6000,oldPrice:6650,img:"iPhone 13 Pro.webp",desc:"iPhone 13 Pro \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:5,badge:"Brand New",reviews:398},
+  {id:"18",name:"Apple iPhone 13 Pro Max",category:"iPhone",price:7000,oldPrice:7750,img:"iPhone 13 Pro Max.webp",desc:"iPhone 13 Pro Max \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:4,badge:"Brand New",reviews:412},
+  {id:"19",name:"Apple iPhone 14",category:"iPhone",price:6000,oldPrice:6650,img:"iPhone 14.jpg",desc:"iPhone 14 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:6,badge:"Brand New",reviews:445},
+  {id:"20",name:"Apple iPhone 14 Plus",category:"iPhone",price:6800,oldPrice:7550,img:"iPhone 14 Plus.jpg",desc:"iPhone 14 Plus \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:9,badge:"Brand New",reviews:198},
+  {id:"21",name:"Apple iPhone 14 Pro",category:"iPhone",price:7500,oldPrice:8300,img:"iPhone 14 Pro.jpg",desc:"iPhone 14 Pro \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:3,badge:"Brand New",reviews:389},
+  {id:"22",name:"Apple iPhone 14 Pro Max",category:"iPhone",price:9000,oldPrice:9950,img:"iPhone 14 Pro Max.jpg",desc:"iPhone 14 Pro Max \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:4,badge:"Brand New",reviews:423},
+  {id:"23",name:"Apple iPhone 15",category:"iPhone",price:7000,oldPrice:7750,img:"iPhone 15.jpg",desc:"iPhone 15 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:5,badge:"Brand New",reviews:389},
+  {id:"24",name:"Apple iPhone 15 Plus",category:"iPhone",price:7500,oldPrice:8300,img:"iPhone 15 Plus.webp",desc:"iPhone 15 Plus \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:6,badge:"Brand New",reviews:276},
+  {id:"25",name:"Apple iPhone 15 Pro",category:"iPhone",price:9000,oldPrice:9950,img:"iPhone 15 Pro.webp",desc:"iPhone 15 Pro \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:7,badge:"Brand New",reviews:523},
+  {id:"26",name:"Apple iPhone 15 Pro Max",category:"iPhone",price:11000,oldPrice:12150,img:"iPhone 15 Pro Max.webp",desc:"iPhone 15 Pro Max \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:8,badge:"Brand New",reviews:398},
+  {id:"27",name:"Apple iPhone 16",category:"iPhone",price:9000,oldPrice:9950,img:"iphone 16.jpg",desc:"iPhone 16 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:5,badge:"Brand New",reviews:412},
+  {id:"28",name:"Apple iPhone 16 Plus",category:"iPhone",price:10000,oldPrice:11050,img:"iphone 16 plus.webp",desc:"iPhone 16 Plus \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:4,badge:"Brand New",reviews:198},
+  {id:"29",name:"Apple iPhone 16 Pro",category:"iPhone",price:12000,oldPrice:13250,img:"iPhone 16 pro.jpg",desc:"iPhone 16 Pro \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:6,badge:"Brand New",reviews:341},
+  {id:"30",name:"Apple iPhone 16 Pro Max",category:"iPhone",price:14000,oldPrice:15450,img:"iPhone 16 pro max.jpg",desc:"iPhone 16 Pro Max \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:9,badge:"Brand New",reviews:389},
+  {id:"31",name:"Apple iPhone 17",category:"iPhone",price:12000,oldPrice:13250,img:"iphone 17.webp",desc:"iPhone 17 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:3,badge:"Brand New",reviews:167},
+  {id:"32",name:"Apple iPhone 17 Air",category:"iPhone",price:13500,oldPrice:14900,img:"iphone 17 air.webp",desc:"iPhone 17 Air \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:4,badge:"Brand New",reviews:89},
+  {id:"33",name:"Apple iPhone 17 Pro",category:"iPhone",price:15000,oldPrice:16550,img:"iphone 17 pro.jpg",desc:"iPhone 17 Pro \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:5,badge:"Brand New",reviews:201},
+  {id:"34",name:"Apple iPhone 17 Pro Max",category:"iPhone",price:17500,oldPrice:19300,img:"iPhone 17  pro max.webp",desc:"iPhone 17 Pro Max \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0","#f0ece0"],stock:6,badge:"Brand New",reviews:156},
+  {id:"35",name:"Apple MacBook Air M1",category:"MacBook",price:6000,oldPrice:6650,img:"MacBook Air M1.jpg",desc:"MacBook Air M1 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:7,badge:"Brand New",reviews:445},
+  {id:"36",name:"Apple MacBook Air M2",category:"MacBook",price:9500,oldPrice:10500,img:"MacBook Air M2.jpg",desc:"MacBook Air M2 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:8,badge:"Brand New",reviews:312},
+  {id:"37",name:"Apple MacBook Air M3",category:"MacBook",price:13500,oldPrice:14900,img:"MacBook Air M3.jpg",desc:"MacBook Air M3 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:5,badge:"Brand New",reviews:203},
+  {id:"38",name:"Apple MacBook Pro M1",category:"MacBook",price:8000,oldPrice:8850,img:"MacBook Pro M1.jpg",desc:"MacBook Pro M1 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:4,badge:"Brand New",reviews:156},
+  {id:"39",name:"Apple MacBook Pro M2",category:"MacBook",price:11500,oldPrice:12700,img:"MacBook Pro M2.jpg",desc:"MacBook Pro M2 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:6,badge:"Brand New",reviews:94},
+  {id:"40",name:"Apple MacBook Pro M3",category:"MacBook",price:15000,oldPrice:16550,img:"MacBook Pro M3.jpg",desc:"MacBook Pro M3 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:9,badge:"Brand New",reviews:67},
+  {id:"41",name:"Apple Watch Series 2",category:"Watch",price:1000,oldPrice:1150,img:"Apple Watch Series 2 (S2).webp",desc:"Apple Watch Series 2 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:3,badge:"Brand New",reviews:412},
+  {id:"42",name:"Apple Watch Series 3",category:"Watch",price:1200,oldPrice:1350,img:"Apple Watch Series 3 (S3).jpg",desc:"Apple Watch Series 3 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:4,badge:"Brand New",reviews:356},
+  {id:"43",name:"Apple Watch Series 4",category:"Watch",price:1500,oldPrice:1700,img:"Apple Watch Series 4 (S4).jpg",desc:"Apple Watch Series 4 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:5,badge:"Brand New",reviews:298},
+  {id:"44",name:"Apple Watch Series 5",category:"Watch",price:1800,oldPrice:2000,img:"Apple Watch Series 5 (S5).jpg",desc:"Apple Watch Series 5 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:6,badge:"Brand New",reviews:245},
+  {id:"45",name:"Apple Watch Series 6",category:"Watch",price:2200,oldPrice:2450,img:"Apple Watch Series 6 (S6).jpg",desc:"Apple Watch Series 6 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:7,badge:"Brand New",reviews:201},
+  {id:"46",name:"Apple Watch Series 7",category:"Watch",price:3000,oldPrice:3350,img:"Apple Watch Series 7 (S7).jpg",desc:"Apple Watch Series 7 \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:8,badge:"Brand New",reviews:187},
+  {id:"50",name:"Apple Watch Series 2 Nike Edition",category:"Watch",price:1000,oldPrice:1150,img:"Apple Watch Series 2 Nike Edition (S2).webp",desc:"Apple Watch Series 2 Nike Edition \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#1c1c1e","#c0c0c0"],stock:4,badge:"Brand New",reviews:156},
+  {id:"47",name:"Apple AirPods 3rd Generation",category:"AirPods",price:1100,oldPrice:1250,img:"AirPods (3rd Generation).webp",desc:"AirPods 3rd Generation \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#f0f0f0"],stock:5,badge:"Brand New",reviews:534},
+  {id:"48",name:"Apple AirPods Max",category:"AirPods",price:2500,oldPrice:2750,img:"AirPods Max.webp",desc:"AirPods Max \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#f0f0f0"],stock:4,badge:"Brand New",reviews:245},
+  {id:"49",name:"Apple AirPods Pro (2nd Generation)",category:"AirPods",price:900,oldPrice:1000,img:"AirPods Pro (2nd Generation).webp",desc:"AirPods Pro (2nd Generation) \u2014 Brand New Sealed. Original box, manufacturer warranty. Fast nationwide delivery.",colors:["#f0f0f0"],stock:6,badge:"Brand New",reviews:678}
 ];
 
 const DEFAULT_PRICELIST = [
   {section:"iPhone 8 / X / XR / XS", icon:"fa-mobile-alt", items:[
-    {name:"iPhone 8 (64GB)",price:"R1,600"},{name:"iPhone 8 (128GB)",price:"R1,750"},
-    {name:"iPhone 8 Plus",price:"R2,000"},{name:"iPhone X",price:"R2,200"},
-    {name:"iPhone XR",price:"R2,350"},{name:"iPhone XS",price:"R2,400"},{name:"iPhone XS Max",price:"R2,800"}
+    {name:"iPhone 8 (64GB)",price:"R1,600"},
+    {name:"iPhone 8 (128GB)",price:"R1,750"},
+    {name:"iPhone 8 Plus",price:"R2,000"},
+    {name:"iPhone X",price:"R2,000"},
+    {name:"iPhone XS",price:"R2,100"},
+    {name:"iPhone XR",price:"R2,200"},
+    {name:"iPhone XS Max",price:"R2,500"}
   ]},
   {section:"iPhone 11 / 12 / 13 / 14", icon:"fa-mobile-alt", items:[
-    {name:"iPhone 11",price:"R3,200"},{name:"iPhone 11 Pro",price:"R3,700"},{name:"iPhone 11 Pro Max",price:"R4,000"},
-    {name:"iPhone 12",price:"R4,000"},{name:"iPhone 12 Mini",price:"R3,800"},{name:"iPhone 12 Pro",price:"R4,500"},
-    {name:"iPhone 12 Pro Max",price:"R5,200"},{name:"iPhone 13",price:"R5,500"},{name:"iPhone 13 Pro",price:"R6,500"},
-    {name:"iPhone 13 Pro Max",price:"R7,000"},{name:"iPhone 14",price:"R6,000"},{name:"iPhone 14 Plus",price:"R6,800"},
-    {name:"iPhone 14 Pro",price:"R7,500"},{name:"iPhone 14 Pro Max",price:"R9,000"}
+    {name:"iPhone 11",price:"R3,000"},
+    {name:"iPhone 11 Pro",price:"R3,500"},
+    {name:"iPhone 11 Pro Max",price:"R4,000"},
+    {name:"iPhone 12",price:"R4,000"},
+    {name:"iPhone 12 Mini",price:"R3,500"},
+    {name:"iPhone 12 Pro",price:"R4,500"},
+    {name:"iPhone 12 Pro Max",price:"R5,000"},
+    {name:"iPhone 13",price:"R5,000"},
+    {name:"iPhone 13 Mini",price:"R4,500"},
+    {name:"iPhone 13 Pro",price:"R6,000"},
+    {name:"iPhone 13 Pro Max",price:"R7,000"},
+    {name:"iPhone 14",price:"R6,000"},
+    {name:"iPhone 14 Plus",price:"R6,800"},
+    {name:"iPhone 14 Pro",price:"R7,500"},
+    {name:"iPhone 14 Pro Max",price:"R9,000"}
   ]},
   {section:"iPhone 15 / 16 / 17", icon:"fa-mobile-alt", items:[
-    {name:"iPhone 15",price:"R7,000"},{name:"iPhone 15 Plus",price:"R7,800"},{name:"iPhone 15 Pro",price:"R9,500"},
-    {name:"iPhone 15 Pro Max",price:"R11,500"},{name:"iPhone 16",price:"R9,500"},{name:"iPhone 16 Plus",price:"R11,500"},
-    {name:"iPhone 16 Pro",price:"R12,500"},{name:"iPhone 16 Pro Max",price:"R15,000"},
-    {name:"iPhone 17",price:"R14,000"},{name:"iPhone 17 Air",price:"R15,000"},
-    {name:"iPhone 17 Pro",price:"R17,000"},{name:"iPhone 17 Pro Max",price:"R19,999"}
+    {name:"iPhone 15",price:"R7,000"},
+    {name:"iPhone 15 Plus",price:"R7,500"},
+    {name:"iPhone 15 Pro",price:"R9,000"},
+    {name:"iPhone 15 Pro Max",price:"R11,000"},
+    {name:"iPhone 16",price:"R9,000"},
+    {name:"iPhone 16 Plus",price:"R10,000"},
+    {name:"iPhone 16 Pro",price:"R12,000"},
+    {name:"iPhone 16 Pro Max",price:"R14,000"},
+    {name:"iPhone 17",price:"R12,000"},
+    {name:"iPhone 17 Air",price:"R13,500"},
+    {name:"iPhone 17 Pro",price:"R15,000"},
+    {name:"iPhone 17 Pro Max",price:"R17,500"}
   ]},
   {section:"AirPods", icon:"fa-headphones", items:[
-    {name:"AirPods Max",price:"R2,500"},{name:"AirPods Pro 2nd Gen",price:"R900"},
-    {name:"AirPods 3rd Gen",price:"R1,100"},{name:"AirPods 4th Gen",price:"R1,500"}
+    {name:"AirPods Max",price:"R2,500"},
+    {name:"AirPods Pro (2nd Gen)",price:"R900"},
+    {name:"AirPods 3rd Generation",price:"R1,100"}
   ]},
   {section:"MacBooks", icon:"fa-laptop", items:[
-    {name:"MacBook Air M1",price:"R6,000"},{name:"MacBook Pro M1",price:"R8,000"},
-    {name:"MacBook Air M2",price:"R8,500"},{name:"MacBook Pro M3",price:"R13,500"},
-    {name:"MacBook Air M4",price:"R14,000"}
+    {name:"MacBook Air M1",price:"R6,000"},
+    {name:"MacBook Pro M1",price:"R8,000"},
+    {name:"MacBook Air M2",price:"R9,500"},
+    {name:"MacBook Pro M2",price:"R11,500"},
+    {name:"MacBook Air M3",price:"R13,500"},
+    {name:"MacBook Pro M3",price:"R15,000"}
   ]},
   {section:"Apple Watches", icon:"fa-clock", items:[
-    {name:"Apple Watch S2",price:"R1,000"},{name:"Apple Watch S6",price:"R2,500"},
-    {name:"Apple Watch S7",price:"R3,000"},{name:"Apple Watch S8",price:"R4,000"},
-    {name:"Apple Watch Ultra",price:"R6,500"}
+    {name:"Apple Watch Series 2",price:"R1,000"},
+    {name:"Apple Watch Series 3",price:"R1,200"},
+    {name:"Apple Watch Series 4",price:"R1,500"},
+    {name:"Apple Watch Series 5",price:"R1,800"},
+    {name:"Apple Watch Series 6",price:"R2,200"},
+    {name:"Apple Watch Series 7",price:"R3,000"}
   ]}
 ];
 
@@ -252,29 +292,59 @@ renderSlider('mostSelling');
 applyPricelistToDOM();
 
 // ============================================================
-//  THEN quietly check JSONBin in the background.
-//  If the admin has saved newer data, swap it in silently.
-//  If there's no internet or JSONBin is down, nothing breaks —
-//  the site just keeps showing the hardcoded products above.
+//  THEN quietly check JSONBin in the background — but ONLY for things an
+//  admin is meant to edit through the admin panel (price, oldPrice, stock,
+//  reviews, badge, desc, colors). The IMAGE FILENAME always comes from this
+//  file, never from the bin. This means editing an "img:" value right here
+//  in script.js takes effect immediately and permanently — no version number
+//  to remember, no bin overwrite can ever revert it again.
 // ============================================================
 fetch(BIN_URL + "/latest", { headers: { "X-Access-Key": API_KEY } })
   .then(res => res.json())
   .then(data => {
     const record = data.record;
-    if (record && Array.isArray(record.products) && record.products.length) {
-      products = record.products;
-      if (Array.isArray(record.pricelist) && record.pricelist.length) pricelistData = record.pricelist;
-      renderAll();
-      renderSlider('deals');
-      renderSlider('weekly');
-      renderSlider('mostSelling');
-      applyPricelistToDOM();
-    } else {
-      // Bin is empty — seed it with our hardcoded data so admin panel has something to edit
+    const binProducts = (record && Array.isArray(record.products)) ? record.products : [];
+    const binById = {};
+    binProducts.forEach(p => { if (p && p.id) binById[p.id] = p; });
+
+    // Merge: start from the hardcoded list (source of truth for img + identity),
+    // layer in editable fields from the bin when that product still exists there.
+    const merged = HARDCODED_PRODUCTS.map(codeProduct => {
+      const fromBin = binById[codeProduct.id];
+      if (!fromBin) return codeProduct;
+      return {
+        ...codeProduct,
+        price: typeof fromBin.price === 'number' ? fromBin.price : codeProduct.price,
+        oldPrice: ('oldPrice' in fromBin) ? fromBin.oldPrice : codeProduct.oldPrice,
+        stock: typeof fromBin.stock === 'number' ? fromBin.stock : codeProduct.stock,
+        reviews: typeof fromBin.reviews === 'number' ? fromBin.reviews : codeProduct.reviews,
+        badge: fromBin.badge || codeProduct.badge,
+        desc: fromBin.desc || codeProduct.desc,
+        colors: Array.isArray(fromBin.colors) && fromBin.colors.length ? fromBin.colors : codeProduct.colors,
+        // img is intentionally NEVER taken from fromBin — always codeProduct.img
+      };
+    });
+
+    products = merged;
+    if (Array.isArray(record && record.pricelist) && record.pricelist.length) {
+      pricelistData = record.pricelist;
+    }
+    renderAll();
+    renderSlider('deals');
+    renderSlider('weekly');
+    renderSlider('mostSelling');
+    applyPricelistToDOM();
+
+    // Keep the bin's editable fields in sync with any brand-new products that
+    // only exist in code so far (e.g. a product just added here but never
+    // saved through the admin panel yet). Images are still never read back
+    // from this write on a future load — see merge logic above.
+    const binIsMissingNewProducts = HARDCODED_PRODUCTS.some(p => !binById[p.id]);
+    if (binIsMissingNewProducts) {
       fetch(BIN_URL, {
         method: "PUT",
         headers: { "Content-Type": "application/json", "X-Access-Key": API_KEY },
-        body: JSON.stringify({ products: HARDCODED_PRODUCTS, pricelist: DEFAULT_PRICELIST })
+        body: JSON.stringify({ products: merged, pricelist: pricelistData })
       }).catch(()=>{});
     }
   })
